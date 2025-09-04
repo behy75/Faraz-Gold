@@ -21,11 +21,11 @@ const getProfitLossStyle = (profitLossString) => {
   const isPositive = profitLossString.startsWith("+");
 
   if (isNegative) {
-    return { color: "#dc3545", fontWeight: "bold" }; // قرمز
+    return { className: styles.textDanger }; // قرمز
   } else if (isPositive) {
-    return { color: "#28a745", fontWeight: "bold" }; // سبز
+    return { className: styles.textSuccess }; // سبز
   } else {
-    return { color: "#ffffff", fontWeight: "normal" }; // سفید
+    return { className: "" }; // بدون کلاس خاص
   }
 };
 
@@ -162,7 +162,9 @@ export default function TransactionHistoryCard({
           <div className={styles.tabContent}>
             {/* دسکتاپ: جدول معاملات */}
             <div className={`${styles.desktopTable} d-none d-md-block`}>
-              <table className="table table-bordered table-striped text-light">
+              <table
+                className={`table table-bordered table-striped text-light ${styles.customTable}`}
+              >
                 <thead>
                   <tr>
                     <th>واحد</th>
@@ -183,8 +185,8 @@ export default function TransactionHistoryCard({
                         <span
                           className={
                             transaction.type === "خرید"
-                              ? "text-success"
-                              : "text-danger"
+                              ? styles.textSuccess
+                              : styles.textDanger
                           }
                           style={{ fontWeight: "normal" }}
                         >
@@ -192,7 +194,11 @@ export default function TransactionHistoryCard({
                         </span>
                       </td>
                       <td>{transaction.outputAmount}</td>
-                      <td style={getProfitLossStyle(transaction.profitLoss)}>
+                      <td
+                        className={
+                          getProfitLossStyle(transaction.profitLoss).className
+                        }
+                      >
                         <span className="fw-bold">
                           {formatProfitLoss(transaction.profitLoss).number}
                         </span>
@@ -352,7 +358,9 @@ export default function TransactionHistoryCard({
           <div className={styles.tabContent}>
             {/* دسکتاپ: جدول پرتفوها */}
             <div className={`${styles.desktopTable} d-none d-md-block`}>
-              <table className="table table-bordered table-striped text-light">
+              <table
+                className={`table table-bordered table-striped text-light ${styles.customTable}`}
+              >
                 <thead>
                   <tr>
                     <th>نوع</th>
@@ -368,7 +376,11 @@ export default function TransactionHistoryCard({
                       <td>{portfolio.type}</td>
                       <td>{portfolio.inputAmount}</td>
                       <td>{portfolio.outputAmount}</td>
-                      <td style={getProfitLossStyle(portfolio.profitLoss)}>
+                      <td
+                        className={
+                          getProfitLossStyle(portfolio.profitLoss).className
+                        }
+                      >
                         <span className="fw-bold">
                           {formatProfitLoss(portfolio.profitLoss).number}
                         </span>

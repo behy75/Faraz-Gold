@@ -56,6 +56,73 @@
   background-color: var(--color-primary);
 }
 
+/* کلاس سفارشی برای override کردن Bootstrap */
+.customTable {
+  background-color: #2a2d35 !important;
+  border: 1px solid #343a40 !important;
+  border-collapse: collapse !important;
+}
+
+.customTable thead th {
+  background-color: #2a2d35 !important;
+  color: #c0c2c5 !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border: 0.5px solid #343a40 !important;
+  padding: 8px !important;
+}
+
+.customTable tbody tr:nth-child(odd) {
+  background-color: #191b1e !important; /* ردیف‌های فرد (اولین ردیف 1) */
+}
+
+.customTable tbody tr:nth-child(even) {
+  background-color: #1e2026 !important; /* ردیف‌های زوج شامل هدر (0) */
+}
+
+.customTable tbody tr:nth-child(odd) td {
+  background-color: #191b1e !important; /* ردیف‌های فرد (اولین ردیف 1) */
+  color: #c0c2c5 !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  border: 0.5px solid #343a40 !important;
+  padding: 6px !important;
+}
+
+.customTable tbody tr:nth-child(even) td {
+  background-color: #1e2026 !important; /* ردیف‌های زوج شامل هدر (0) */
+  color: #c0c2c5 !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  border: 0.5px solid #343a40 !important;
+  padding: 6px !important;
+}
+
+.customTable tbody tr:hover {
+  background-color: #343a40 !important;
+}
+
+.customTable tbody tr:hover td {
+  background-color: #343a40 !important;
+}
+
+/* Override Bootstrap table-striped */
+.customTable.table-striped > tbody > tr:nth-of-type(odd) > td {
+  background-color: #191b1e !important;
+}
+
+.customTable.table-striped > tbody > tr:nth-of-type(even) > td {
+  background-color: #1e2026 !important;
+}
+
+/* Override Bootstrap table-hover */
+.customTable.table-hover > tbody > tr:hover > td {
+  background-color: #343a40 !important;
+}
+
 /* Desktop Table Styling */
 .desktopTable {
   margin-bottom: 20px;
@@ -74,7 +141,7 @@
 
 .desktopTable .table thead th {
   background-color: #2a2d35;
-  color: #ffffff;
+  color: #c0c2c5;
   text-align: center;
   border: 1px solid #343a40;
   border-top: none;
@@ -93,8 +160,20 @@
   text-align: center;
   padding: 8px;
   font-size: 13px;
-  color: #ffffff;
-  background-color: #2a2d35;
+  color: #c0c2c5;
+  font-weight: normal;
+}
+
+.desktopTable .table tbody tr:nth-child(odd) td {
+  background-color: #191b1e !important; /* ردیف‌های فرد (اولین ردیف 1) */
+  color: #c0c2c5 !important;
+  font-weight: normal !important;
+}
+
+.desktopTable .table tbody tr:nth-child(even) td {
+  background-color: #1e2026 !important; /* ردیف‌های زوج شامل هدر (0) */
+  color: #c0c2c5 !important;
+  font-weight: normal !important;
 }
 
 .desktopTable .table tbody tr:last-child td {
@@ -102,11 +181,11 @@
 }
 
 .desktopTable .table tbody tr:nth-child(odd) {
-  background-color: #2a2d35;
+  background-color: #191b1e !important; /* ردیف‌های فرد (اولین ردیف 1) */
 }
 
 .desktopTable .table tbody tr:nth-child(even) {
-  background-color: #2a2d35;
+  background-color: #1e2026 !important; /* ردیف‌های زوج شامل هدر (0) */
 }
 
 .desktopTable .table tbody tr:hover {
@@ -115,19 +194,68 @@
 }
 
 /* Text color classes */
-.desktopTable .table td.textSuccess {
-  color: #28a745;
-  font-weight: bold;
+.textSuccess {
+  color: #28a745 !important;
+  font-weight: bold !important;
 }
 
-.desktopTable .table td.textDanger {
-  color: #dc3545;
-  font-weight: bold;
+.textDanger {
+  color: #dc3545 !important;
+  font-weight: bold !important;
 }
 
-.desktopTable .table td.textWarning {
-  color: #f5c542;
-  font-weight: bold;
+.textWarning {
+  color: #f5c542 !important;
+  font-weight: bold !important;
+}
+
+/* Override برای ستون سود/ضرر */
+.customTable tbody tr:nth-child(odd) td.textSuccess {
+  background-color: #191b1e !important;
+  color: #28a745 !important;
+  font-weight: bold !important;
+}
+
+.customTable tbody tr:nth-child(even) td.textSuccess {
+  background-color: #1e2026 !important;
+  color: #28a745 !important;
+  font-weight: bold !important;
+}
+
+.customTable tbody tr:nth-child(odd) td.textDanger {
+  background-color: #191b1e !important;
+  color: #dc3545 !important;
+  font-weight: bold !important;
+}
+
+.customTable tbody tr:nth-child(even) td.textDanger {
+  background-color: #1e2026 !important;
+  color: #dc3545 !important;
+  font-weight: bold !important;
+}
+
+/* هاور برای ستون سود/ضرر */
+.customTable tbody tr:hover td.textSuccess {
+  background-color: #343a40 !important;
+  color: #28a745 !important;
+  font-weight: bold !important;
+}
+
+.customTable tbody tr:hover td.textDanger {
+  background-color: #343a40 !important;
+  color: #dc3545 !important;
+  font-weight: bold !important;
+}
+
+/* Override برای کلاس‌های Bootstrap */
+.customTable .textSuccess {
+  color: #28a745 !important;
+  font-weight: bold !important;
+}
+
+.customTable .textDanger {
+  color: #dc3545 !important;
+  font-weight: bold !important;
 }
 
 /* Remove default Bootstrap background */
