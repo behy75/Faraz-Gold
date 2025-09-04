@@ -26,18 +26,18 @@ ChartJS.register(
 );
 
 export default function ProfitLossChart({ data = [] }) {
-  // Default data if none provided
+  // Default data matching the image pattern
   const defaultData = [
-    { portfolio: 1, profitLoss: -2500000 },
-    { portfolio: 2, profitLoss: -500000 },
-    { portfolio: 3, profitLoss: -2700000 },
-    { portfolio: 4, profitLoss: 0 },
-    { portfolio: 5, profitLoss: 0 },
-    { portfolio: 6, profitLoss: 0 },
-    { portfolio: 7, profitLoss: 0 },
-    { portfolio: 8, profitLoss: -700000 },
-    { portfolio: 9, profitLoss: -1000000 },
-    { portfolio: 10, profitLoss: -2000000 },
+    { portfolio: 1, profitLoss: -50000 },
+    { portfolio: 2, profitLoss: -20000 },
+    { portfolio: 3, profitLoss: -10000 },
+    { portfolio: 4, profitLoss: 280000 },
+    { portfolio: 5, profitLoss: -50000 },
+    { portfolio: 6, profitLoss: 10000 },
+    { portfolio: 7, profitLoss: 20000 },
+    { portfolio: 8, profitLoss: 15000 },
+    { portfolio: 9, profitLoss: 25000 },
+    { portfolio: 10, profitLoss: 30000 },
   ];
 
   const chartData = data.length > 0 ? data : defaultData;
@@ -49,17 +49,33 @@ export default function ProfitLossChart({ data = [] }) {
         {
           label: "سود/ضرر (تومان)",
           data: chartData.map((item) => item.profitLoss),
-          borderColor: "#784ed1",
-          backgroundColor: "rgba(120, 78, 209, 0.2)",
-          borderWidth: 2,
-          pointBackgroundColor: "#784ed1",
-          pointBorderColor: "#ffffff",
-          pointBorderWidth: 2,
+          borderColor: "#6c63ff",
+          backgroundColor: function (context) {
+            const chart = context.chart;
+            const { ctx, chartArea } = chart;
+            if (!chartArea) {
+              return null;
+            }
+            const gradient = ctx.createLinearGradient(
+              0,
+              chartArea.bottom,
+              0,
+              chartArea.top
+            );
+            gradient.addColorStop(0, "rgba(108, 99, 255, 0)");
+            gradient.addColorStop(1, "rgba(62, 59, 132, 0.3)");
+            return gradient;
+          },
+          borderWidth: 3,
+          pointBackgroundColor: "#6c63ff",
+          pointBorderColor: "#6c63ff",
+          pointBorderWidth: 0,
           pointRadius: 4,
           pointHoverRadius: 6,
           fill: true,
           tension: 0.4,
           stepped: false,
+          legendColor: "#3f3b87",
         },
       ],
     },
@@ -67,6 +83,9 @@ export default function ProfitLossChart({ data = [] }) {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
+        title: {
+          display: false, // Remove title since we have card header
+        },
         legend: {
           display: true,
           position: "top",
@@ -78,6 +97,29 @@ export default function ProfitLossChart({ data = [] }) {
             },
             usePointStyle: true,
             pointStyle: "rect",
+            generateLabels: function (chart) {
+              const datasets = chart.data.datasets;
+              return datasets.map((dataset, index) => ({
+                text: dataset.label,
+                fillStyle: dataset.legendColor || dataset.backgroundColor,
+                strokeStyle: "#6c63ff",
+                lineWidth: dataset.borderWidth,
+                pointStyle: "rect",
+                hidden: !chart.isDatasetVisible(index),
+                index: index,
+                datasetIndex: index,
+                fontColor: "#ffffff",
+                fontFamily: "Vazir, IranSans, sans-serif",
+                fontSize: 14,
+                lineCap: "butt",
+                lineDash: [],
+                lineDashOffset: 0,
+                lineJoin: "miter",
+                pointStyle: "rect",
+                pointStyleWidth: 20,
+                pointStyleHeight: 8,
+              }));
+            },
           },
         },
         tooltip: {
@@ -103,7 +145,7 @@ export default function ProfitLossChart({ data = [] }) {
             display: false,
           },
           grid: {
-            color: "rgba(255, 255, 255, 0.1)",
+            display: false,
             drawBorder: false,
           },
           ticks: {
@@ -143,9 +185,16 @@ export default function ProfitLossChart({ data = [] }) {
   };
 
   return (
-    <div className={styles.chartContainer}>
-      <div className={styles.chartWrapper}>
-        <Line data={chartConfig.data} options={chartConfig.options} />
+    <div className={styles.card}>
+      <div className={styles.cardHeader}>
+        <h6 className="mb-0">نمودار سود و ضرر 10 پرتفو اخیر</h6>
+      </div>
+      <div className={styles.cardBody}>
+        <div className={styles.chartContainer}>
+          <div className={styles.chartWrapper}>
+            <Line data={chartConfig.data} options={chartConfig.options} />
+          </div>
+        </div>
       </div>
     </div>
   );

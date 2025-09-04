@@ -14,10 +14,10 @@ export default function UserProfilePage() {
 
   // Mock data - in real app this would come from API or props
   const userData = {
-    username: "احمد محمدی",
+    username: "09186393984",
     balance: 1500000,
     verificationStatus: "verified",
-    totalProfitLoss: 250000,
+    totalProfitLoss: 0,
     openTransactionsCount: 5,
   };
 
@@ -150,14 +150,7 @@ export default function UserProfilePage() {
       {/* نمودار سود و ضرر 10 پرتفو اخیر */}
       <div className="row mt-4">
         <div className="col-12">
-          <div className={`${styles.card} card`}>
-            <div className={styles.cardHeader}>
-              <h6 className="mb-0">نمودار سود و ضرر 10 پرتفو اخیر</h6>
-            </div>
-            <div className={styles.cardBody}>
-              <ProfitLossChart data={chartData} />
-            </div>
-          </div>
+          <ProfitLossChart data={chartData} />
         </div>
       </div>
     </div>

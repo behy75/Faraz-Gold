@@ -33,14 +33,14 @@ export default function UserInfo({
                   <i className="bi bi-person-circle fs-2"></i>
                 </div>
                 <div className="d-flex flex-column justify-content-between">
-                  <b className="fs-6">{username}</b>
+                  <span className="fs-19 lh-26 text-title">{username}</span>
                   <div className={styles.infoRow}>
-                    <span className="fs-6">
+                    <span className="fs-12 lh-16">
                       موجودی :
-                      <span className="ltr ms-1">
+                      <span className="ltr ms-1 fw-bold">
                         {formatNumberFa(balance)}
                       </span>
-                      <span className="fw-bold ms-2">تومان</span>
+                      <span className="ms-2 fw-normal">تومان</span>
                     </span>
                   </div>
                 </div>
@@ -53,7 +53,7 @@ export default function UserInfo({
             <div
               className={`${styles.userLevel} d-flex flex-column justify-content-between`}
             >
-              <div className="d-flex justify-content-between align-items-center mb-2">
+              <div className="d-flex justify-content-between align-items-center mb-3">
                 <span className={styles.levelLabel}>سطح کابری</span>
                 <a
                   href="/dashboard/authentication/"
@@ -66,9 +66,9 @@ export default function UserInfo({
               </div>
 
               <div
-                className={`${styles.levelContainer} d-flex justify-content-between align-items-center w-100`}
+                className={`${styles.levelContainer} d-flex justify-content-between align-items-center w-100 mb-3`}
               >
-                <div className={`fw-bold ${statusText.klass}`}>
+                <div className={statusText.klass}>
                   {statusText.label}
                   <a
                     href="/dashboard/authentication/"
@@ -90,7 +90,7 @@ export default function UserInfo({
                 </div>
 
                 {/* تیک‌های مراحل */}
-                <div className={`${styles.levelTicks} d-none d-md-flex`}>
+                <div className={`${styles.levelTicks} d-flex`}>
                   <div
                     className={`${styles.levelSelector} ${
                       ["in_review", "verified"].includes(verificationStatus)
@@ -116,27 +116,26 @@ export default function UserInfo({
 
       {/* دو کارت آماری سمت راست */}
       <div className="col-12 col-lg-6">
-        <div className="row g-3 m-0">
-          <div className="col-6">
-            <div className={`${styles.statCard} card`}>
-              <div className="card-body p-3 d-flex flex-column justify-content-between">
+        <div className={styles.statCard}>
+          <div className="row g-3 m-0">
+            <div className="col-6">
+              <div className="p-3 d-flex flex-column justify-content-between">
                 <p className={styles.statLabel}>سود و ضرر لحظه ای :</p>
                 <h5
-                  className={`card-title ${
+                  className={`${
                     totalProfitLoss >= 0 ? "text-success" : "text-danger"
                   } text-center`}
                 >
-                  {formatNumberFa(totalProfitLoss)} تومان
+                  {formatNumberFa(totalProfitLoss)}{" "}
+                  <span className="fw-normal">تومان</span>
                 </h5>
               </div>
             </div>
-          </div>
 
-          <div className="col-6">
-            <div className={`${styles.statCard} card`}>
-              <div className="card-body p-3 d-flex flex-column justify-content-between">
+            <div className="col-6">
+              <div className="p-3 d-flex flex-column justify-content-between">
                 <p className={styles.statLabel}>تعداد معاملات باز :</p>
-                <h5 className="card-title text-white text-center">
+                <h5 className="fw-bold text-white text-center">
                   {formatNumberFa(openTransactionsCount)}
                 </h5>
               </div>

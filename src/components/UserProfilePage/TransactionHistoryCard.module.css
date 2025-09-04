@@ -28,7 +28,6 @@
   border: none;
   padding: 8px 16px;
   border-radius: 0;
-  margin-right: 20px;
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 14px;
@@ -162,7 +161,7 @@
 }
 
 .mobileCard .card-text {
-  color: var(--color-muted);
+  color: #a3a5a8;
   font-size: 14px;
   margin-bottom: 8px;
   display: flex;
@@ -170,9 +169,14 @@
   align-items: center;
 }
 
-.mobileCard .card-text span {
-  color: var(--color-text);
-  font-weight: 500;
+.mobileCard .card-text span:first-child {
+  color: #a3a5a8 !important;
+  font-weight: normal;
+}
+
+.mobileCard .card-text span:last-child {
+  color: #ffffff !important;
+  font-weight: normal;
 }
 
 /* Pagination Section */

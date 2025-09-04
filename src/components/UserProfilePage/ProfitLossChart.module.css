@@ -1,5 +1,32 @@
 /* src/components/UserProfilePage/ProfitLossChart.module.css */
 
+/* کارت کلی */
+.card {
+  background: var(--card-bg);
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* هدر کارت */
+.cardHeader {
+  display: flex;
+  gap: 10px;
+  padding: 15px 20px;
+  background: var(--card-header-bg);
+  border-bottom: 1px solid var(--divider-strong);
+}
+
+/* بدنه کارت */
+.cardBody {
+  background: var(--card-bg);
+  flex: 1;
+}
+
 .chartContainer {
   background-color: rgb(20, 21, 26);
   border-radius: 8px;
@@ -10,18 +37,27 @@
 
 .chartWrapper {
   position: relative;
-  height: 350px;
+  height: 450px;
   width: 100%;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .cardHeader {
+    padding: 12px 15px;
+    gap: 8px;
+  }
+  
+  .cardBody {
+    padding: 15px;
+  }
+  
   .chartContainer {
     padding: 15px;
     min-height: 300px;
   }
   
   .chartWrapper {
-    height: 250px;
+    height: 350px;
   }
 }

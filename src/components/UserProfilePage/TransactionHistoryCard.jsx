@@ -1,6 +1,16 @@
 import React from "react";
 import styles from "./TransactionHistoryCard.module.css";
 
+// تابع برای جدا کردن عدد و واحد از رشته سود/ضرر
+const formatProfitLoss = (profitLossString) => {
+  // اگر رشته شامل "تومان" باشد، آن را جدا می‌کنیم
+  if (profitLossString.includes("تومان")) {
+    const number = profitLossString.replace("تومان", "").trim();
+    return { number, unit: "تومان" };
+  }
+  return { number: profitLossString, unit: "" };
+};
+
 export default function TransactionHistoryCard({
   activeTab = "transactions",
   onTabChange = () => {},
@@ -92,10 +102,21 @@ export default function TransactionHistoryCard({
                       <td>{transaction.unit}</td>
                       <td>{transaction.inputAmount}</td>
                       <td>
-                        <span className="text-success">{transaction.type}</span>
+                        <span className="text-success fw-normal">
+                          {transaction.type}
+                        </span>
                       </td>
                       <td>{transaction.outputAmount}</td>
-                      <td className="text-danger">{transaction.profitLoss}</td>
+                      <td className="text-danger">
+                        <span className="fw-bold">
+                          {formatProfitLoss(transaction.profitLoss).number}
+                        </span>
+                        {formatProfitLoss(transaction.profitLoss).unit && (
+                          <span className="fw-normal ms-1">
+                            {formatProfitLoss(transaction.profitLoss).unit}
+                          </span>
+                        )}
+                      </td>
                       <td>{transaction.openTime}</td>
                       <td>{transaction.closeTime}</td>
                     </tr>
@@ -152,27 +173,40 @@ export default function TransactionHistoryCard({
                 >
                   <div className="card-body">
                     <h5 className="card-title">
-                      <span className="text-success">{transaction.type}</span> -{" "}
-                      {transaction.unit} واحد
+                      <span className="text-success fw-normal">
+                        {transaction.type}
+                      </span>{" "}
+                      - {transaction.unit} واحد
                     </h5>
-                    <p className="card-text">
-                      مبلغ ورودی: <span>{transaction.inputAmount}</span>
-                    </p>
-                    <p className="card-text">
-                      مبلغ خروجی: <span>{transaction.outputAmount}</span>
-                    </p>
-                    <p className="card-text">
-                      سود/ضرر:{" "}
+                    <div className="card-text">
+                      <span>مبلغ ورودی:</span>
+                      <span>{transaction.inputAmount}</span>
+                    </div>
+                    <div className="card-text">
+                      <span>مبلغ خروجی:</span>
+                      <span>{transaction.outputAmount}</span>
+                    </div>
+                    <div className="card-text">
+                      <span>سود/ضرر:</span>
                       <span className="text-danger">
-                        {transaction.profitLoss}
+                        <span className="fw-bold">
+                          {formatProfitLoss(transaction.profitLoss).number}
+                        </span>
+                        {formatProfitLoss(transaction.profitLoss).unit && (
+                          <span className="fw-normal ms-1">
+                            {formatProfitLoss(transaction.profitLoss).unit}
+                          </span>
+                        )}
                       </span>
-                    </p>
-                    <p className="card-text">
-                      زمان باز شدن: <span>{transaction.openTime}</span>
-                    </p>
-                    <p className="card-text">
-                      زمان بسته شدن: <span>{transaction.closeTime}</span>
-                    </p>
+                    </div>
+                    <div className="card-text">
+                      <span>زمان باز شدن:</span>
+                      <span>{transaction.openTime}</span>
+                    </div>
+                    <div className="card-text">
+                      <span>زمان بسته شدن:</span>
+                      <span>{transaction.closeTime}</span>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -240,7 +274,16 @@ export default function TransactionHistoryCard({
                       <td>{portfolio.type}</td>
                       <td>{portfolio.inputAmount}</td>
                       <td>{portfolio.outputAmount}</td>
-                      <td className="text-danger">{portfolio.profitLoss}</td>
+                      <td className="text-danger">
+                        <span className="fw-bold">
+                          {formatProfitLoss(portfolio.profitLoss).number}
+                        </span>
+                        {formatProfitLoss(portfolio.profitLoss).unit && (
+                          <span className="fw-normal ms-1">
+                            {formatProfitLoss(portfolio.profitLoss).unit}
+                          </span>
+                        )}
+                      </td>
                       <td>{portfolio.status}</td>
                     </tr>
                   ))}
@@ -287,23 +330,33 @@ export default function TransactionHistoryCard({
                 <div key={portfolio.id} className={`${styles.mobileCard} card`}>
                   <div className="card-body">
                     <h5 className="card-title">
-                      <span>{portfolio.type}</span>
+                      <span className="text-white">{portfolio.type}</span>
                     </h5>
-                    <p className="card-text">
-                      مبلغ ورودی: <span>{portfolio.inputAmount}</span>
-                    </p>
-                    <p className="card-text">
-                      مبلغ خروجی: <span>{portfolio.outputAmount}</span>
-                    </p>
-                    <p className="card-text">
-                      سود/ضرر:{" "}
+                    <div className="card-text">
+                      <span>مبلغ ورودی:</span>
+                      <span>{portfolio.inputAmount}</span>
+                    </div>
+                    <div className="card-text">
+                      <span>مبلغ خروجی:</span>
+                      <span>{portfolio.outputAmount}</span>
+                    </div>
+                    <div className="card-text">
+                      <span>سود/ضرر:</span>
                       <span className="text-danger">
-                        {portfolio.profitLoss}
+                        <span className="fw-bold">
+                          {formatProfitLoss(portfolio.profitLoss).number}
+                        </span>
+                        {formatProfitLoss(portfolio.profitLoss).unit && (
+                          <span className="fw-normal ms-1">
+                            {formatProfitLoss(portfolio.profitLoss).unit}
+                          </span>
+                        )}
                       </span>
-                    </p>
-                    <p className="card-text">
-                      وضعیت: <span>{portfolio.status}</span>
-                    </p>
+                    </div>
+                    <div className="card-text">
+                      <span>وضعیت:</span>
+                      <span>{portfolio.status}</span>
+                    </div>
                   </div>
                 </div>
               ))}

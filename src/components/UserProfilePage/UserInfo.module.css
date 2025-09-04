@@ -1,9 +1,6 @@
 /* src/components/UserProfilePage/UserInfo.module.css */
 .userProfile {
-  background: var(--card-bg);
   color: var(--color-text);
-  border-radius: 8px;
-  padding: 12px 16px;
 }
 
 .userImg i { 
@@ -70,14 +67,20 @@
 }
 
 .statCard {
-  background: var(--card-bg);
-  border: none;
   color: #a3a5a8;
-  border-radius: 8px;
 }
 
 .statLabel {
   color: #a3a5a8;
   text-align: center;
   margin-bottom: 8px;
+}
+
+/* موبایل: اضافه کردن باکس به کارت‌های آمار */
+@media (max-width: 768px) {
+  .statCard {
+    background: var(--card-bg) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+  }
 }
