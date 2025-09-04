@@ -1,0 +1,80 @@
+.header {
+  height: var(--header-h);
+  width: 100%;
+  background: var(--surface-header-bg);
+  box-shadow: var(--elev-header);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-h);
+  padding: 0 40px;
+  color: var(--color-text);
+  flex-direction: row;
+}
+
+/* لوگو */
+.brand, .brandAlt { display: flex; align-items: center; text-decoration: none; margin-left: 20px;}
+.brand img, .brandAlt img { height: 40px; transition: transform .3s ease; }
+.brand img:hover, .brandAlt img:hover { transform: scale(1.1); }
+.brandText { margin-right: 10px; color: var(--brand-wordmark); }
+
+/* ناوبری بالا */
+.topNav { display: flex; flex-basis: auto; flex-grow: 1; }
+.navList { display: flex; list-style-type: none; align-items: center; gap: 30px; margin: 0; padding: 0; }
+.link { color: var(--color-muted); text-decoration: none; font-size: 1rem; transition: color .3s ease; }
+.link:hover { color: var(--color-primary); }
+
+/* اکشن‌ها */
+.actions { display: flex; gap: 10px; align-items: center; }
+.actions :global(.btn) {
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: 1.4rem;
+  padding: 5px;
+  border: none;
+  transition: color .3s ease, transform .3s ease;
+}
+.actions :global(.btn:hover) {
+  color: var(--color-primary);
+  transform: scale(1.2);
+}
+
+/* Divider عمودی */
+.buttonsDivider {
+  background: var(--divider-soft);
+  height: 32px;
+  width: 1px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: var(--color-muted);
+}
+
+/* موبایل */
+.hamburger { display: none; margin-left: 10px; position: relative; z-index: 10; }
+.brandAlt { display: none; }
+@media (max-width: 768px) {
+  .hamburger { display: block !important; }
+  .topNav { display: none; }
+  .brand { display: none !important; }
+  .brandAlt { display: flex !important; }
+}
+
+/* اطلاعات کاربر در موبایل */
+.mobileUserInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: var(--surface-mobile-info-bg);
+}
+@media (min-width: 769px) {
+  .mobileUserInfo { display: none; }
+  .buttonsDivider { display: none !important; }
+}

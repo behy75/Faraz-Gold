@@ -1,0 +1,74 @@
+.sidebar {
+  position: absolute;
+  top: var(--header-h);
+  right: 0; /* مطابق تمپلیت */
+  height: calc(100% - var(--header-h));
+  width: 60px; /* باریک (فقط آیکون) */
+  background: var(--surface-sidebar-bg);
+  transition: width .3s, box-shadow .3s;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.navLink {
+  color: var(--sidebar-link);
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 0;
+  transition: background-color .3s, color .3s;
+}
+.navLink i {
+  font-size: 1.2rem;
+  margin-left: 8px; /* فاصله آیکون از متن */
+}
+
+.navLink:hover {
+  background: var(--surface-sidebar-hover-bg);
+  color: var(--sidebar-hover-text);
+}
+
+.navLinkText {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+  white-space: nowrap;
+}
+
+/* لینک فعال (مثل .sidebar .nav-link.active در تمپلیت) */
+.active {
+  background: var(--surface-sidebar-hover-bg);
+  color: var(--sidebar-active-text);
+}
+
+/* جداکننده */
+.divider {
+  border-top: 1px solid var(--divider-strong);
+  margin: 8px 0;
+}
+
+/* Hover expand در دسکتاپ */
+@media (min-width: 769px) {
+  .sidebar:hover { width: 200px; box-shadow: var(--elev-sidebar-hover); }
+  .sidebar:hover .navLinkText { opacity: 1; pointer-events: auto; }
+}
+
+/* موبایل: پیش‌فرض مخفی (خارج از صفحه)، با کلاس open وارد شود */
+.open { left: 0; display: block; }
+
+@media (max-width: 768px) {
+  .sidebar {
+    /* روی موبایل، از سمت چپ پنهان می‌شود تا با تمپلیت کاملاً یکی باشد */
+    left: -200px;
+    right: auto;        /* لغو anchor راست برای انیمیشن چپ */
+    width: 200px;
+    display: none;
+  }
+  .navLinkText { opacity: 1 !important; pointer-events: auto !important; }
+}
+
+/* رنگ‌های ویژه (بدون هاردکد) */
+.teacher { color: var(--sidebar-teacher) !important; }
+.logout  { color: var(--color-danger) !important; }

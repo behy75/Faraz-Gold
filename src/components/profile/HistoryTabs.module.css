@@ -1,0 +1,79 @@
+/* src/components/profile/HistoryTabs.module.css */
+.card { background: var(--card-bg); border: none; height: 100%; }
+.cardHeader { background: var(--card-header-bg); border-bottom: 1px solid var(--divider-strong); }
+
+.tabBtn {
+  background: none; color: var(--tab-fg);
+  border: none; border-bottom: 3px solid transparent;
+  padding: 10px 20px; cursor: pointer; font-size: 1rem;
+  transition: all .3s ease;
+}
+.tabBtn:hover { color: var(--tab-fg-hover); }
+.tabBtn.active { color: var(--tab-active); border-color: var(--tab-active); }
+
+.cardBody { background: var(--card-header-bg); }
+.tabContent { display: none; }
+.tabContent.show { display: block; }
+
+.table {
+  background: var(--table-bg);
+  color: #c0c2c5;
+  font-size: .9rem;
+  border-collapse: collapse;
+}
+.table thead th {
+  background: var(--table-header-bg);
+  color: #fff;
+  text-align: center;
+  border: 1px solid var(--table-border);
+  padding: 10px;
+}
+.table tbody td {
+  border: 1px solid var(--table-border);
+  text-align: center;
+  padding: 8px;
+}
+.table tbody tr:nth-child(odd)  { background: var(--table-row-odd) !important; }
+.table tbody tr:nth-child(even) { background: var(--table-row-even) !important; }
+.table tbody tr:hover { background: var(--table-hover-bg) !important; transition: background-color .3s ease; }
+.table :where(thead,tbody) :where(th,td) { color: #c0c2c5 !important; }
+
+.pagerWrap {
+  display: flex; justify-content: space-between; align-items: center; margin-top: 10px;
+}
+.pageInfo { color: #fff; }
+
+.pagination {
+  display: flex; list-style: none; padding: 0; margin: 0;
+  gap: 10px;
+}
+.pagination li button {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 6px 12px;
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+}
+.pagination li button[disabled] {
+  background: #fff; color: rgb(92, 92, 92);
+  border: none; cursor: not-allowed;
+}
+
+/* Desktop/Mobile visibility */
+.desktopOnly { display: block; }
+.mobileOnly  { display: none; }
+@media (max-width: 767.98px) {
+  .desktopOnly { display: none !important; }
+  .mobileOnly  { display: block !important; }
+}
+
+/* Mobile cards */
+.mobileCard {
+  background: var(--table-bg);
+  color: #fff; border: none; border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.cardTextRow {
+  display: flex; justify-content: space-between;
+  font-size: .9rem; margin-bottom: .3rem;
+}

@@ -1,0 +1,29 @@
+.menu {
+  min-width: 300px;
+  background-color: var(--surface-dropdown-bg) !important;
+  border: none !important;
+  border-radius: 5px !important;
+  box-shadow: var(--elev-dropdown) !important;
+  color: var(--dropdown-text) !important; /* متن آیتم‌ها */
+}
+
+/* متن‌های داخلی (به‌جای text-white / text-white-50) */
+.title { color: var(--dropdown-text) !important; font-weight: 700; }
+.muted { color: var(--dropdown-text-muted) !important; }
+.body  { color: var(--dropdown-text) !important; }
+
+/* جداکننده بین آیتم‌ها (به‌جای style="borderColor:#2b2d33") */
+.hr { border-color: var(--dropdown-hr) !important; }
+
+/* نقطه اعلان جدید */
+.dot {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(50%, -50%);
+  width: 17px;
+  height: 17px;
+  background: var(--color-danger);
+  border: 1px solid var(--notif-dot-border);
+  border-radius: 50%;
+}
