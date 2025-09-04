@@ -28,7 +28,7 @@
 }
 
 .chartContainer {
-  background-color: rgb(20, 21, 26);
+  background-color: var(--userprofile-bg-dark);
   border-radius: 8px;
   padding: 20px;
   height: 100%;

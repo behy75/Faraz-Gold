@@ -1,7 +1,7 @@
 /* src/components/UserProfilePage/TransactionHistoryCard.module.css */
 
 .transactionCard {
-  background-color: rgb(20, 21, 26);
+  background-color: var(--userprofile-bg-dark);
   border: none;
   height: 100%;
   border-radius: 8px;
@@ -9,11 +9,11 @@
 }
 
 .cardHeader {
-  background-color: rgb(20, 21, 26);
+  background-color: var(--userprofile-bg-dark);
 }
 
 .cardBody {
-  background-color: rgb(20, 21, 26);
+  background-color: var(--userprofile-bg-dark);
   padding: 20px;
 }
 
@@ -58,69 +58,69 @@
 
 /* کلاس سفارشی برای override کردن Bootstrap */
 .customTable {
-  background-color: #2a2d35 !important;
-  border: 1px solid #343a40 !important;
+  background-color: var(--userprofile-bg-table-header) !important;
+  border: 1px solid var(--userprofile-border-dark) !important;
   border-collapse: collapse !important;
 }
 
 .customTable thead th {
-  background-color: #2a2d35 !important;
-  color: #c0c2c5 !important;
+  background-color: var(--userprofile-bg-table-header) !important;
+  color: var(--userprofile-text-light-gray) !important;
   text-align: center !important;
   font-size: 14px !important;
   font-weight: 500 !important;
-  border: 0.5px solid #343a40 !important;
+  border: 0.5px solid var(--userprofile-border-dark) !important;
   padding: 8px !important;
 }
 
 .customTable tbody tr:nth-child(odd) {
-  background-color: #191b1e !important; /* ردیف‌های فرد (اولین ردیف 1) */
+  background-color: var(--userprofile-bg-row-odd) !important; /* ردیف‌های فرد (اولین ردیف 1) */
 }
 
 .customTable tbody tr:nth-child(even) {
-  background-color: #1e2026 !important; /* ردیف‌های زوج شامل هدر (0) */
+  background-color: var(--userprofile-bg-row-even) !important; /* ردیف‌های زوج شامل هدر (0) */
 }
 
 .customTable tbody tr:nth-child(odd) td {
-  background-color: #191b1e !important; /* ردیف‌های فرد (اولین ردیف 1) */
-  color: #c0c2c5 !important;
+  background-color: var(--userprofile-bg-row-odd) !important; /* ردیف‌های فرد (اولین ردیف 1) */
+  color: var(--userprofile-text-light-gray) !important;
   font-weight: normal !important;
   text-align: center !important;
   font-size: 14px !important;
-  border: 0.5px solid #343a40 !important;
+  border: 0.5px solid var(--userprofile-border-dark) !important;
   padding: 6px !important;
 }
 
 .customTable tbody tr:nth-child(even) td {
-  background-color: #1e2026 !important; /* ردیف‌های زوج شامل هدر (0) */
-  color: #c0c2c5 !important;
+  background-color: var(--userprofile-bg-row-even) !important; /* ردیف‌های زوج شامل هدر (0) */
+  color: var(--userprofile-text-light-gray) !important;
   font-weight: normal !important;
   text-align: center !important;
   font-size: 14px !important;
-  border: 0.5px solid #343a40 !important;
+  border: 0.5px solid var(--userprofile-border-dark) !important;
   padding: 6px !important;
 }
 
 .customTable tbody tr:hover {
-  background-color: #343a40 !important;
+  background-color: var(--userprofile-bg-hover) !important;
 }
 
 .customTable tbody tr:hover td {
-  background-color: #343a40 !important;
+  background-color: var(--userprofile-bg-hover) !important;
 }
 
 /* Override Bootstrap table-striped */
 .customTable.table-striped > tbody > tr:nth-of-type(odd) > td {
-  background-color: #191b1e !important;
+  background-color: var(--userprofile-bg-row-odd) !important;
 }
 
 .customTable.table-striped > tbody > tr:nth-of-type(even) > td {
-  background-color: #1e2026 !important;
+  background-color: var(--userprofile-bg-row-even) !important;
 }
 
 /* Override Bootstrap table-hover */
 .customTable.table-hover > tbody > tr:hover > td {
-  background-color: #343a40 !important;
+  background-color: var(--userprofile-bg-hover) !important;
 }
 
 /* Desktop Table Styling */
@@ -129,9 +129,9 @@
 }
 
 .desktopTable .table {
-  background-color: #2a2d35;
+  background-color: var(--userprofile-bg-table-header);
   border-collapse: collapse;
-  color: #ffffff;
+  color: var(--userprofile-text-white);
   font-size: 0.9rem;
   border: none;
   border-radius: 8px;
@@ -153,26 +153,26 @@
 }
 
 .desktopTable .table tbody td {
-  border: 1px solid #343a40;
+  border: 1px solid var(--userprofile-border-dark);
   border-top: none;
   border-left: none;
   border-right: none;
   text-align: center;
   padding: 8px;
   font-size: 13px;
-  color: #c0c2c5;
+  color: var(--userprofile-text-light-gray);
   font-weight: normal;
 }
 
 .desktopTable .table tbody tr:nth-child(odd) td {
-  background-color: #191b1e !important; /* ردیف‌های فرد (اولین ردیف 1) */
-  color: #c0c2c5 !important;
+  background-color: var(--userprofile-bg-row-odd) !important; /* ردیف‌های فرد (اولین ردیف 1) */
+  color: var(--userprofile-text-light-gray) !important;
   font-weight: normal !important;
 }
 
 .desktopTable .table tbody tr:nth-child(even) td {
-  background-color: #1e2026 !important; /* ردیف‌های زوج شامل هدر (0) */
-  color: #c0c2c5 !important;
+  background-color: var(--userprofile-bg-row-even) !important; /* ردیف‌های زوج شامل هدر (0) */
+  color: var(--userprofile-text-light-gray) !important;
   font-weight: normal !important;
   opacity: 0.1 !important;
 }
@@ -182,81 +182,81 @@
 }
 
 .desktopTable .table tbody tr:nth-child(odd) {
-  background-color: #191b1e !important; /* ردیف‌های فرد (اولین ردیف 1) */
+  background-color: var(--userprofile-bg-row-odd) !important; /* ردیف‌های فرد (اولین ردیف 1) */
 }
 
 .desktopTable .table tbody tr:nth-child(even) {
-  background-color: #1e2026 !important; /* ردیف‌های زوج شامل هدر (0) */
+  background-color: var(--userprofile-bg-row-even) !important; /* ردیف‌های زوج شامل هدر (0) */
   opacity: 0.1 !important;
 }
 
 .desktopTable .table tbody tr:hover {
-  background-color: #343a40;
+  background-color: var(--userprofile-bg-hover);
   transition: background-color 0.3s ease;
 }
 
 /* Text color classes */
 .textSuccess {
-  color: #28a745 !important;
+  color: var(--success) !important;
   font-weight: bold !important;
 }
 
 .textDanger {
-  color: #dc3545 !important;
+  color: var(--danger) !important;
   font-weight: bold !important;
 }
 
 .textWarning {
-  color: #f5c542 !important;
+  color: var(--warning-alt) !important;
   font-weight: bold !important;
 }
 
 /* Override برای ستون سود/ضرر */
 .customTable tbody tr:nth-child(odd) td.textSuccess {
-  background-color: #191b1e !important;
-  color: #28a745 !important;
+  background-color: var(--userprofile-bg-row-odd) !important;
+  color: var(--success) !important;
   font-weight: bold !important;
 }
 
 .customTable tbody tr:nth-child(even) td.textSuccess {
-  background-color: #1e2026 !important;
-  color: #28a745 !important;
+  background-color: var(--userprofile-bg-row-even) !important;
+  color: var(--success) !important;
   font-weight: bold !important;
 }
 
 .customTable tbody tr:nth-child(odd) td.textDanger {
-  background-color: #191b1e !important;
-  color: #dc3545 !important;
+  background-color: var(--userprofile-bg-row-odd) !important;
+  color: var(--danger) !important;
   font-weight: bold !important;
 }
 
 .customTable tbody tr:nth-child(even) td.textDanger {
-  background-color: #1e2026 !important;
-  color: #dc3545 !important;
+  background-color: var(--userprofile-bg-row-even) !important;
+  color: var(--danger) !important;
   font-weight: bold !important;
 }
 
 /* هاور برای ستون سود/ضرر */
 .customTable tbody tr:hover td.textSuccess {
-  background-color: #343a40 !important;
-  color: #28a745 !important;
+  background-color: var(--userprofile-bg-hover) !important;
+  color: var(--success) !important;
   font-weight: bold !important;
 }
 
 .customTable tbody tr:hover td.textDanger {
-  background-color: #343a40 !important;
-  color: #dc3545 !important;
+  background-color: var(--userprofile-bg-hover) !important;
+  color: var(--danger) !important;
   font-weight: bold !important;
 }
 
 /* Override برای کلاس‌های Bootstrap */
 .customTable .textSuccess {
-  color: #28a745 !important;
+  color: var(--success) !important;
   font-weight: bold !important;
 }
 
 .customTable .textDanger {
-  color: #dc3545 !important;
+  color: var(--danger) !important;
   font-weight: bold !important;
 }
 
@@ -284,7 +284,7 @@
 }
 
 .mobileCard .card-title {
-  color: #ffffff;
+  color: var(--userprofile-text-white);
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 15px;
@@ -292,7 +292,7 @@
 
 /* Mobile Cards Text Override */
 .cardText {
-  color: #ffffff !important;
+  color: var(--userprofile-text-white) !important;
   font-size: 14px !important;
   margin-bottom: 8px !important;
   display: flex !important;
@@ -301,50 +301,50 @@
 }
 
 .cardText span {
-  color: #ffffff !important;
+  color: var(--userprofile-text-white) !important;
   font-weight: normal !important;
 }
 
 .cardText span:first-child {
-  color: #ffffff !important;
+  color: var(--userprofile-text-white) !important;
   font-weight: normal !important;
 }
 
 .cardText span:last-child {
-  color: #ffffff !important;
+  color: var(--userprofile-text-white) !important;
   font-weight: normal !important;
 }
 
 /* Specific override for profit/loss values */
 .cardText span:last-child .textSuccess {
-  color: #28a745 !important;
+  color: var(--success) !important;
 }
 
 .cardText span:last-child .textDanger {
-  color: #dc3545 !important;
+  color: var(--danger) !important;
 }
 
 /* Force override for mobile card profit/loss values */
 .cardText .textSuccess {
-  color: #28a745 !important;
+  color: var(--success) !important;
 }
 
 .cardText .textDanger {
-  color: #dc3545 !important;
+  color: var(--danger) !important;
 }
 
 /* Mobile card title text colors */
 .mobileCard .card-title .textSuccess {
-  color: #28a745 !important;
+  color: var(--success) !important;
 }
 
 .mobileCard .card-title .textDanger {
-  color: #dc3545 !important;
+  color: var(--danger) !important;
 }
 
 /* Override for mobile card title */
 .mobileCard .card-title {
-  color: #ffffff !important;
+  color: var(--userprofile-text-white) !important;
   font-size: 16px !important;
   font-weight: 600 !important;
   margin-bottom: 15px !important;
@@ -352,38 +352,38 @@
 
 /* Override for success/danger colors in mobile cards */
 .mobileCard .textSuccess {
-  color: #28a745 !important;
+  color: var(--success) !important;
 }
 
 .mobileCard .textDanger {
-  color: #dc3545 !important;
+  color: var(--danger) !important;
 }
 
 /* Additional override for cardText success/danger */
 .mobileCard .cardText .textSuccess {
-  color: #28a745 !important;
+  color: var(--success) !important;
 }
 
 .mobileCard .cardText .textDanger {
-  color: #dc3545 !important;
+  color: var(--danger) !important;
 }
 
 /* Ultimate override for profit/loss numbers */
 .mobileCard .cardText span:last-child .textSuccess,
 .mobileCard .cardText .textSuccess {
-  color: #28a745 !important;
+  color: var(--success) !important;
   font-weight: bold !important;
 }
 
 .mobileCard .cardText span:last-child .textDanger,
 .mobileCard .cardText .textDanger {
-  color: #dc3545 !important;
+  color: var(--danger) !important;
   font-weight: bold !important;
 }
 
 /* کلاس cardText برای کارت‌های موبایل */
 .cardText {
-  color: #ffffff !important;
+  color: var(--userprofile-text-white) !important;
   font-size: 14px !important;
   margin-bottom: 8px !important;
   display: flex !important;
@@ -392,17 +392,17 @@
 }
 
 .cardText span:first-child {
-  color: #ffffff !important;
+  color: var(--userprofile-text-white) !important;
   font-weight: normal !important;
 }
 
 .cardText span:last-child {
-  color: #ffffff !important;
+  color: var(--userprofile-text-white) !important;
   font-weight: normal !important;
 }
 
 .mobileCard .card-text {
-  color: #ffffff;
+  color: var(--userprofile-text-white);
   font-size: 14px;
   margin-bottom: 8px;
   display: flex;
@@ -411,12 +411,12 @@
 }
 
 .mobileCard .card-text span:first-child {
-  color: #ffffff !important;
+  color: var(--userprofile-text-white) !important;
   font-weight: normal;
 }
 
 .mobileCard .card-text span:last-child {
-  color: #ffffff !important;
+  color: var(--userprofile-text-white) !important;
   font-weight: normal;
 }
 
@@ -444,10 +444,10 @@
 }
 
 .paginationBtn {
-  background-color: #784ed1 !important;
-  color: white !important;
+  background-color: var(--userprofile-btn-primary) !important;
+  color: var(--userprofile-text-white) !important;
   padding: 5px 10px !important;
-  border: 1px solid #784ed1 !important;
+  border: 1px solid var(--userprofile-btn-primary) !important;
   border-radius: 5px !important;
   text-decoration: none !important;
   margin: 0 5px !important;
@@ -459,40 +459,40 @@
 }
 
 .paginationBtn:hover:not(.disabled) {
-  background-color: #6c63ff !important;
-  border-color: #6c63ff !important;
+  background-color: var(--userprofile-btn-primary-hover) !important;
+  border-color: var(--userprofile-btn-primary-hover) !important;
 }
 
 .paginationBtn.disabled {
-  background-color: rgb(20, 21, 26) !important;
-  color: #c0c2c5 !important;
-  border-color: #343a40 !important;
+  background-color: var(--userprofile-bg-dark) !important;
+  color: var(--userprofile-text-light-gray) !important;
+  border-color: var(--userprofile-border-dark) !important;
   cursor: not-allowed !important;
   opacity: 0.8 !important;
 }
 
 /* دکمه قبلی - سفید */
 .paginationBtn:first-child {
-  background-color: #ffffff !important;
-  color: rgb(20, 21, 26) !important;
-  border-color: #ddd !important;
+  background-color: var(--userprofile-text-white) !important;
+  color: var(--userprofile-bg-dark) !important;
+  border-color: var(--userprofile-btn-border) !important;
 }
 
 .paginationBtn:first-child:hover:not(.disabled) {
-  background-color: #f8f9fa !important;
-  border-color: #ddd !important;
+  background-color: var(--userprofile-bg-light-hover) !important;
+  border-color: var(--userprofile-btn-border) !important;
 }
 
 /* دکمه بعدی - بنفش */
 .paginationBtn:last-child {
-  background-color: #784ed1 !important;
-  color: white !important;
-  border-color: #784ed1 !important;
+  background-color: var(--userprofile-btn-primary) !important;
+  color: var(--userprofile-text-white) !important;
+  border-color: var(--userprofile-btn-primary) !important;
 }
 
 .paginationBtn:last-child:hover:not(.disabled) {
-  background-color: #6c63ff !important;
-  border-color: #6c63ff !important;
+  background-color: var(--userprofile-btn-primary-hover) !important;
+  border-color: var(--userprofile-btn-primary-hover) !important;
 }
 
 /* Pagination Styling (reusing the same style as NotificationsCard) */
@@ -501,7 +501,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  background: #f5f5f5;
+  background: var(--userprofile-bg-light);
   border-radius: 5px;
   overflow: hidden;
 }
@@ -513,17 +513,17 @@
 
 .pagination .page-item:first-child .page-link {
   border-radius: 5px 0 0 5px;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid var(--userprofile-btn-border);
 }
 
 .pagination .page-item:last-child .page-link {
   border-radius: 0 5px 5px 0;
-  border-left: 1px solid #784ed1;
+  border-left: 1px solid var(--userprofile-btn-primary);
 }
 
 .pagination .page-link {
-  background-color: #f5f5f5 !important;
-  color: #333 !important;
+  background-color: var(--userprofile-bg-light) !important;
+  color: var(--userprofile-text-dark) !important;
   padding: 8px 16px !important;
   border: none !important;
   border-radius: 0 !important;
@@ -539,32 +539,32 @@
 
 /* Next button styling */
 .pagination .page-item:last-child .page-link {
-  background-color: #784ed1 !important;
-  color: white !important;
+  background-color: var(--userprofile-btn-primary) !important;
+  color: var(--userprofile-text-white) !important;
 }
 
 .pagination .page-link:hover {
   background-color: #e8e8e8 !important;
-  color: #333 !important;
+  color: var(--userprofile-text-dark) !important;
   text-decoration: none !important;
 }
 
 .pagination .page-item:last-child .page-link:hover {
-  background-color: #6c63ff !important;
-  color: white !important;
+  background-color: var(--userprofile-btn-primary-hover) !important;
+  color: var(--userprofile-text-white) !important;
 }
 
 .pagination .page-link:disabled,
 .pagination .page-item.disabled .page-link {
-  background-color: #f5f5f5 !important;
-  color: #999 !important;
+  background-color: var(--userprofile-bg-light) !important;
+  color: var(--userprofile-text-disabled) !important;
   cursor: not-allowed !important;
 }
 
 .pagination .page-link:disabled:hover,
 .pagination .page-item.disabled .page-link:hover {
-  background-color: #f5f5f5 !important;
-  color: #999 !important;
+  background-color: var(--userprofile-bg-light) !important;
+  color: var(--userprofile-text-disabled) !important;
   text-decoration: none !important;
 }
 

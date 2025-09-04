@@ -5,7 +5,7 @@
 
 .userImg i { 
   font-size: 50px; 
-  color: #A3A5A8; 
+  color: var(--userprofile-text-muted); 
 }
 
 .infoRow { 
@@ -19,7 +19,7 @@
 .levelLabel { 
   line-height: 1.25rem; 
   font-size: .9375rem; 
-  color: #a3a5a8; 
+  color: var(--userprofile-text-muted); 
 }
 
 .levelLink { 
@@ -47,7 +47,7 @@
 .levelSelector {
   width: 20px; 
   height: 20px;
-  border: 2px solid #ccc;
+  border: 2px solid var(--userprofile-btn-border);
   border-radius: 50%;
   display: flex; 
   justify-content: center; 
@@ -62,16 +62,16 @@
 .center { 
   width: 10px; 
   height: 10px; 
-  background: #fff; 
+  background: var(--userprofile-text-white); 
   border-radius: 50%; 
 }
 
 .statCard {
-  color: #a3a5a8;
+  color: var(--userprofile-text-muted);
 }
 
 .statLabel {
-  color: #a3a5a8;
+  color: var(--userprofile-text-muted);
   text-align: center;
   margin-bottom: 8px;
 }

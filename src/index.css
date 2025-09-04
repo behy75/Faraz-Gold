@@ -115,6 +115,33 @@ body {
   --success: #28a745;
   --danger: #dc3545;
   --warning: #ffc107;
+  --warning-alt: #f5c542;
+
+  /* UserProfilePage Specific Colors */
+  /* Background Colors */
+  --userprofile-bg-dark: rgb(20, 21, 26);
+  --userprofile-bg-table-header: #2a2d35;
+  --userprofile-bg-row-odd: #191b1e;
+  --userprofile-bg-row-even: #1e2026;
+  --userprofile-bg-hover: #343a40;
+  --userprofile-bg-light: #f5f5f5;
+  --userprofile-bg-light-hover: #f8f9fa;
+
+  /* Text Colors */
+  --userprofile-text-white: #ffffff;
+  --userprofile-text-light-gray: #c0c2c5;
+  --userprofile-text-muted: #a3a5a8;
+  --userprofile-text-dark: #333;
+  --userprofile-text-disabled: #999;
+
+  /* Button Colors */
+  --userprofile-btn-primary: #784ed1;
+  --userprofile-btn-primary-hover: #6c63ff;
+  --userprofile-btn-border: #ddd;
+
+  /* Border Colors */
+  --userprofile-border-dark: #343a40;
+  --userprofile-border-light: #ddd;
 
   /* Cards/Tables (DARK) */
   --card-bg: #1e2026;

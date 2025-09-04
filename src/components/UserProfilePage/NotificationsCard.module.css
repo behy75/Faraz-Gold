@@ -11,7 +11,7 @@
 
 .cardHeader {
   background-color: var(--notif-header-bg) !important;
-  color: #ffffff !important;
+  color: var(--userprofile-text-white) !important;
   border-bottom: none;
   padding: 12px 20px;
   font-weight: 600;
@@ -41,18 +41,18 @@
 
 .notificationTitle {
   font-weight: 200;
-  color: #ffffff;
+  color: var(--userprofile-text-white);
   font-size: 14px;
 }
 
 .notificationDate {
-  color: #a3a5a8;
+  color: var(--userprofile-text-muted);
   font-size: 12px;
   font-weight: 400;
 }
 
 .notificationContent {
-  color: #a3a5a8;
+  color: var(--userprofile-text-muted);
   font-size: 13px;
   line-height: 1.4;
   font-weight: 400;
@@ -98,10 +98,10 @@
 }
 
 .paginationBtn {
-  background-color: #784ed1 !important;
-  color: white !important;
+  background-color: var(--userprofile-btn-primary) !important;
+  color: var(--userprofile-text-white) !important;
   padding: 5px 10px !important;
-  border: 1px solid #784ed1 !important;
+  border: 1px solid var(--userprofile-btn-primary) !important;
   border-radius: 5px !important;
   text-decoration: none !important;
   margin: 0 5px !important;
@@ -113,40 +113,40 @@
 }
 
 .paginationBtn:hover:not(.disabled) {
-  background-color: #6c63ff !important;
-  border-color: #6c63ff !important;
+  background-color: var(--userprofile-btn-primary-hover) !important;
+  border-color: var(--userprofile-btn-primary-hover) !important;
 }
 
 .paginationBtn.disabled {
-  background-color: rgb(20, 21, 26) !important;
-  color: #c0c2c5 !important;
-  border-color: #343a40 !important;
+  background-color: var(--userprofile-bg-dark) !important;
+  color: var(--userprofile-text-light-gray) !important;
+  border-color: var(--userprofile-border-dark) !important;
   cursor: not-allowed !important;
   opacity: 0.8 !important;
 }
 
 /* دکمه قبلی - سفید */
 .paginationBtn:first-child {
-  background-color: #ffffff !important;
-  color: rgb(20, 21, 26) !important;
-  border-color: #ddd !important;
+  background-color: var(--userprofile-text-white) !important;
+  color: var(--userprofile-bg-dark) !important;
+  border-color: var(--userprofile-btn-border) !important;
 }
 
 .paginationBtn:first-child:hover:not(.disabled) {
-  background-color: #f8f9fa !important;
-  border-color: #ddd !important;
+  background-color: var(--userprofile-bg-light-hover) !important;
+  border-color: var(--userprofile-btn-border) !important;
 }
 
 /* دکمه بعدی - بنفش */
 .paginationBtn:last-child {
-  background-color: #784ed1 !important;
-  color: white !important;
-  border-color: #784ed1 !important;
+  background-color: var(--userprofile-btn-primary) !important;
+  color: var(--userprofile-text-white) !important;
+  border-color: var(--userprofile-btn-primary) !important;
 }
 
 .paginationBtn:last-child:hover:not(.disabled) {
-  background-color: #6c63ff !important;
-  border-color: #6c63ff !important;
+  background-color: var(--userprofile-btn-primary-hover) !important;
+  border-color: var(--userprofile-btn-primary-hover) !important;
 }
 
 /* Scrollbar styling */
