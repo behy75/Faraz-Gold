@@ -5,10 +5,28 @@ import styles from "./TransactionHistoryCard.module.css";
 const formatProfitLoss = (profitLossString) => {
   // اگر رشته شامل "تومان" باشد، آن را جدا می‌کنیم
   if (profitLossString.includes("تومان")) {
-    const number = profitLossString.replace("تومان", "").trim();
+    let number = profitLossString.replace("تومان", "").trim();
+    // حذف علامت + از ابتدای عدد مثبت
+    if (number.startsWith("+")) {
+      number = number.substring(1);
+    }
     return { number, unit: "تومان" };
   }
   return { number: profitLossString, unit: "" };
+};
+
+// تابع برای تشخیص مثبت یا منفی بودن و اعمال استایل مناسب
+const getProfitLossStyle = (profitLossString) => {
+  const isNegative = profitLossString.startsWith("-");
+  const isPositive = profitLossString.startsWith("+");
+
+  if (isNegative) {
+    return { color: "#dc3545", fontWeight: "bold" }; // قرمز
+  } else if (isPositive) {
+    return { color: "#28a745", fontWeight: "bold" }; // سبز
+  } else {
+    return { color: "#ffffff", fontWeight: "normal" }; // سفید
+  }
 };
 
 export default function TransactionHistoryCard({
@@ -27,13 +45,73 @@ export default function TransactionHistoryCard({
   const defaultTransactions = [
     {
       id: 1,
-      unit: "5",
-      inputAmount: "۲۸,۴۰۲",
+      unit: "2",
+      inputAmount: "۳۸,۴۸۵",
       type: "خرید",
-      outputAmount: "۲۸,۳۹۴",
-      profitLoss: "۰ تومان",
-      openTime: "۰۳:۳۳ ۱۴۰۴/۰۶/۱۳",
-      closeTime: "۰۳:۳۴ ۱۴۰۴/۰۶/۱۳",
+      outputAmount: "۳۸,۳۰۱",
+      profitLoss: "-۱۸۴,۰۰۰ تومان",
+      openTime: "۱۴:۱۲ ۱۴۰۴/۰۶/۱۲",
+      closeTime: "۱۴:۱۲ ۱۴۰۴/۰۶/۱۲",
+    },
+    {
+      id: 2,
+      unit: "2",
+      inputAmount: "۳۸,۴۸۵",
+      type: "خرید",
+      outputAmount: "۳۹,۳۲۵",
+      profitLoss: "+۱,۶۴۰,۰۰۰ تومان",
+      openTime: "۱۴:۱۳ ۱۴۰۴/۰۶/۱۲",
+      closeTime: "۱۴:۱۴ ۱۴۰۴/۰۶/۱۲",
+    },
+    {
+      id: 3,
+      unit: "2",
+      inputAmount: "۳۸,۴۸۵",
+      type: "خرید",
+      outputAmount: "۳۸,۶۶۳",
+      profitLoss: "+۳۷۶,۰۰۰ تومان",
+      openTime: "۱۴:۱۵ ۱۴۰۴/۰۶/۱۲",
+      closeTime: "۱۴:۱۵ ۱۴۰۴/۰۶/۱۲",
+    },
+    {
+      id: 4,
+      unit: "2",
+      inputAmount: "۳۸,۴۸۵",
+      type: "خرید",
+      outputAmount: "۳۸,۶۳۴",
+      profitLoss: "+۲۹۸,۰۰۰ تومان",
+      openTime: "۲۰:۰۲ ۱۴۰۴/۰۶/۱۰",
+      closeTime: "۲۰:۰۳ ۱۴۰۴/۰۶/۱۰",
+    },
+    {
+      id: 5,
+      unit: "2",
+      inputAmount: "۳۸,۴۸۵",
+      type: "خرید",
+      outputAmount: "۳۸,۶۳۳",
+      profitLoss: "+۲۹۶,۰۰۰ تومان",
+      openTime: "۲۰:۰۸ ۱۴۰۴/۰۶/۱۰",
+      closeTime: "۲۰:۰۹ ۱۴۰۴/۰۶/۱۰",
+    },
+    {
+      id: 6,
+      unit: "2",
+      inputAmount: "۳۸,۴۸۵",
+      type: "فروش",
+      outputAmount: "۳۸,۸۶۱",
+      profitLoss: "+۷۵۲,۰۰۰ تومان",
+      openTime: "۱۰:۱۳ ۱۴۰۴/۰۶/۰۹",
+      closeTime: "۱۰:۱۴ ۱۴۰۴/۰۶/۰۹",
+    },
+    {
+      id: 7,
+      unit: "2",
+      inputAmount: "۳۸,۴۸۵",
+      type: "خرید",
+      outputAmount: "۳۷,۹۲۲",
+      profitLoss: "-۹۲۶,۰۰۰ تومان",
+      openTime: "۱۰:۱۰ ۱۴۰۴/۰۶/۰۹",
+      closeTime: "۱۰:۱۱ ۱۴۰۴/۰۶/۰۹",
     },
   ];
 
@@ -102,12 +180,19 @@ export default function TransactionHistoryCard({
                       <td>{transaction.unit}</td>
                       <td>{transaction.inputAmount}</td>
                       <td>
-                        <span className="text-success fw-normal">
+                        <span
+                          className={
+                            transaction.type === "خرید"
+                              ? "text-success"
+                              : "text-danger"
+                          }
+                          style={{ fontWeight: "normal" }}
+                        >
                           {transaction.type}
                         </span>
                       </td>
                       <td>{transaction.outputAmount}</td>
-                      <td className="text-danger">
+                      <td style={getProfitLossStyle(transaction.profitLoss)}>
                         <span className="fw-bold">
                           {formatProfitLoss(transaction.profitLoss).number}
                         </span>
@@ -175,7 +260,14 @@ export default function TransactionHistoryCard({
                 >
                   <div className="card-body">
                     <h5 className="card-title">
-                      <span className="text-success fw-normal">
+                      <span
+                        className={
+                          transaction.type === "خرید"
+                            ? "text-success"
+                            : "text-danger"
+                        }
+                        style={{ fontWeight: "normal" }}
+                      >
                         {transaction.type}
                       </span>{" "}
                       - {transaction.unit} واحد
@@ -190,7 +282,7 @@ export default function TransactionHistoryCard({
                     </div>
                     <div className="card-text">
                       <span>سود/ضرر:</span>
-                      <span className="text-danger">
+                      <span style={getProfitLossStyle(transaction.profitLoss)}>
                         <span className="fw-bold">
                           {formatProfitLoss(transaction.profitLoss).number}
                         </span>
@@ -276,7 +368,7 @@ export default function TransactionHistoryCard({
                       <td>{portfolio.type}</td>
                       <td>{portfolio.inputAmount}</td>
                       <td>{portfolio.outputAmount}</td>
-                      <td className="text-danger">
+                      <td style={getProfitLossStyle(portfolio.profitLoss)}>
                         <span className="fw-bold">
                           {formatProfitLoss(portfolio.profitLoss).number}
                         </span>
@@ -344,7 +436,7 @@ export default function TransactionHistoryCard({
                     </div>
                     <div className="card-text">
                       <span>سود/ضرر:</span>
-                      <span className="text-danger">
+                      <span style={getProfitLossStyle(portfolio.profitLoss)}>
                         <span className="fw-bold">
                           {formatProfitLoss(portfolio.profitLoss).number}
                         </span>
