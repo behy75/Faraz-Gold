@@ -313,13 +313,73 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-  padding-top: 15px;
 }
 
 .pageInfo {
   color: var(--color-text);
   font-size: 14px;
   font-weight: 500;
+}
+
+/* کلاس‌های جدید برای pagination */
+.customPagination {
+  display: flex !important;
+  gap: 10px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 20px 0 !important;
+}
+
+.paginationBtn {
+  background-color: #784ed1 !important;
+  color: white !important;
+  padding: 5px 10px !important;
+  border: 1px solid #784ed1 !important;
+  border-radius: 5px !important;
+  text-decoration: none !important;
+  margin: 0 5px !important;
+  transition: 0.3s ease !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  min-width: 60px !important;
+  text-align: center !important;
+}
+
+.paginationBtn:hover:not(.disabled) {
+  background-color: #6c63ff !important;
+  border-color: #6c63ff !important;
+}
+
+.paginationBtn.disabled {
+  background-color: rgb(20, 21, 26) !important;
+  color: #c0c2c5 !important;
+  border-color: #343a40 !important;
+  cursor: not-allowed !important;
+  opacity: 0.8 !important;
+}
+
+/* دکمه قبلی - سفید */
+.paginationBtn:first-child {
+  background-color: #ffffff !important;
+  color: rgb(20, 21, 26) !important;
+  border-color: #ddd !important;
+}
+
+.paginationBtn:first-child:hover:not(.disabled) {
+  background-color: #f8f9fa !important;
+  border-color: #ddd !important;
+}
+
+/* دکمه بعدی - بنفش */
+.paginationBtn:last-child {
+  background-color: #784ed1 !important;
+  color: white !important;
+  border-color: #784ed1 !important;
+}
+
+.paginationBtn:last-child:hover:not(.disabled) {
+  background-color: #6c63ff !important;
+  border-color: #6c63ff !important;
 }
 
 /* Pagination Styling (reusing the same style as NotificationsCard) */

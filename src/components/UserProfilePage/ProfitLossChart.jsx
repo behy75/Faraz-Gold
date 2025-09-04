@@ -63,7 +63,7 @@ export default function ProfitLossChart({ data = [] }) {
               chartArea.top
             );
             gradient.addColorStop(0, "rgba(108, 99, 255, 0)");
-            gradient.addColorStop(1, "rgba(62, 59, 132, 0.3)");
+            gradient.addColorStop(1, "rgba(108, 99, 255, 0.4)");
             return gradient;
           },
           borderWidth: 3,
@@ -187,7 +187,7 @@ export default function ProfitLossChart({ data = [] }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
-        <h6 className="mb-0">نمودار سود و ضرر 10 پرتفو اخیر</h6>
+        <h5 className="mb-0">نمودار سود و ضرر 10 پرتفو اخیر</h5>
       </div>
       <div className={styles.cardBody}>
         <div className={styles.chartContainer}>

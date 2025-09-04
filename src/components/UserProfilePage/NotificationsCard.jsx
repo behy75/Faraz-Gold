@@ -69,41 +69,34 @@ export default function NotificationsCard({
       {/* دکمه‌های پیمایش */}
       <div className={`${styles.cardFooter} card-footer notification-footer`}>
         <div className={`${styles.paginationContainer} pagination-container`}>
-          <ul className="pagination">
-            <li className={`page-item ${currentPage <= 1 ? "disabled" : ""}`}>
-              <a
-                className="page-link"
-                href="#"
-                tabIndex="-1"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (currentPage > 1) {
-                    onPageChange(currentPage - 1);
-                  }
-                }}
-              >
-                قبلی
-              </a>
-            </li>
-            <li
-              className={`page-item ${
-                currentPage >= totalPages ? "disabled" : ""
+          <div className={styles.customPagination}>
+            <button
+              className={`${styles.paginationBtn} ${
+                currentPage <= 1 ? styles.disabled : ""
               }`}
+              onClick={() => {
+                if (currentPage > 1) {
+                  onPageChange(currentPage - 1);
+                }
+              }}
+              disabled={currentPage <= 1}
             >
-              <a
-                className="page-link"
-                href={`?notifications_page=${currentPage + 1}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (currentPage < totalPages) {
-                    onPageChange(currentPage + 1);
-                  }
-                }}
-              >
-                بعدی
-              </a>
-            </li>
-          </ul>
+              قبلی
+            </button>
+            <button
+              className={`${styles.paginationBtn} ${
+                currentPage >= totalPages ? styles.disabled : ""
+              }`}
+              onClick={() => {
+                if (currentPage < totalPages) {
+                  onPageChange(currentPage + 1);
+                }
+              }}
+              disabled={currentPage >= totalPages}
+            >
+              بعدی
+            </button>
+          </div>
         </div>
       </div>
     </div>

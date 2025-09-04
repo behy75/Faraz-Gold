@@ -41,7 +41,7 @@
 }
 
 .notificationTitle {
-  font-weight: 600;
+  font-weight: 200;
   color: #ffffff;
   font-size: 14px;
 }
@@ -89,80 +89,65 @@
   justify-content: center;
 }
 
-.pagination {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background: transparent;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid #e0e0e0;
+/* کلاس‌های جدید برای pagination */
+.customPagination {
+  display: flex !important;
+  gap: 10px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 20px 0 !important;
 }
 
-.pagination .page-item {
-  margin: 0;
-  flex: 1;
-}
-
-.pagination .page-item:first-child .page-link {
-  border-radius: 8px 0 0 8px;
-  border-right: 1px solid #e0e0e0;
-}
-
-.pagination .page-item:last-child .page-link {
-  border-radius: 0 8px 8px 0;
-  border-left: none;
-}
-
-.page-link {
-  font-family: "IranSans", sans-serif;
-  font-size: 0.9rem;
-  color: #0d6efd;
-  background-color: #f8f9fa !important;
-  padding: 10px 20px !important;
-  border: none !important;
-  border-radius: 0 !important;
+.paginationBtn {
+  background-color: #784ed1 !important;
+  color: white !important;
+  padding: 5px 10px !important;
+  border: 1px solid #784ed1 !important;
+  border-radius: 5px !important;
   text-decoration: none !important;
-  margin: 0 !important;
+  margin: 0 5px !important;
   transition: 0.3s ease !important;
-  font-weight: 500 !important;
   cursor: pointer !important;
-  display: block !important;
-  width: 100% !important;
+  font-size: 16px !important;
+  min-width: 60px !important;
   text-align: center !important;
 }
 
-/* Active/Next button styling */
-.pagination .page-item:last-child .page-link {
+.paginationBtn:hover:not(.disabled) {
+  background-color: #6c63ff !important;
+  border-color: #6c63ff !important;
+}
+
+.paginationBtn.disabled {
+  background-color: rgb(20, 21, 26) !important;
+  color: #c0c2c5 !important;
+  border-color: #343a40 !important;
+  cursor: not-allowed !important;
+  opacity: 0.8 !important;
+}
+
+/* دکمه قبلی - سفید */
+.paginationBtn:first-child {
   background-color: #ffffff !important;
-  color: #0d6efd !important;
+  color: rgb(20, 21, 26) !important;
+  border-color: #ddd !important;
 }
 
-.page-link:hover {
-  background-color: #e9ecef !important;
-  color: #495057 !important;
-  text-decoration: none !important;
-}
-
-.pagination .page-item:last-child .page-link:hover {
+.paginationBtn:first-child:hover:not(.disabled) {
   background-color: #f8f9fa !important;
-  color: #0d6efd !important;
+  border-color: #ddd !important;
 }
 
-.page-link:disabled,
-.page-item.disabled .page-link {
-  color: #6c757d;
-  pointer-events: none;
-  cursor: default;
-  background-color: #f8f9fa !important;
+/* دکمه بعدی - بنفش */
+.paginationBtn:last-child {
+  background-color: #784ed1 !important;
+  color: white !important;
+  border-color: #784ed1 !important;
 }
 
-.page-link:disabled:hover,
-.page-item.disabled .page-link:hover {
-  background-color: #f8f9fa !important;
-  color: #6c757d !important;
-  text-decoration: none !important;
+.paginationBtn:last-child:hover:not(.disabled) {
+  background-color: #6c63ff !important;
+  border-color: #6c63ff !important;
 }
 
 /* Scrollbar styling */
@@ -200,6 +185,12 @@
   .page-link {
     padding: 6px 0px !important;
     font-size: 12px !important;
+  }
+  
+  .paginationBtn {
+    font-size: 14px !important;
+    min-width: 50px !important;
+    padding: 4px 8px !important;
   }
 }
 

@@ -38,25 +38,125 @@
 .table tbody tr:hover { background: var(--table-hover-bg) !important; transition: background-color .3s ease; }
 .table :where(thead,tbody) :where(th,td) { color: #c0c2c5 !important; }
 
+/* کلاس customTable برای استایل‌های جدید */
+.customTable {
+  background: #2a2d35 !important;
+  border: 1px solid #343a40 !important;
+  border-collapse: collapse !important;
+}
+
+.customTable thead th {
+  background: #1e2026 !important;
+  color: #c0c2c5 !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border: 0.5px solid #343a40 !important;
+  padding: 8px !important;
+}
+
+.customTable tbody tr:nth-child(odd) td {
+  background: #191b1e !important;
+  color: #c0c2c5 !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
+  border: 0.5px solid #343a40 !important;
+  padding: 6px !important;
+}
+
+.customTable tbody tr:nth-child(even) td {
+  background: #1e2026 !important;
+  color: #c0c2c5 !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
+  border: 0.5px solid #343a40 !important;
+  padding: 6px !important;
+}
+
+.customTable tbody tr:hover td {
+  background: #343a40 !important;
+  transition: background-color .3s ease;
+}
+
+.customTable tbody tr:hover td.textSuccess {
+  background: #343a40 !important;
+  color: #28a745 !important;
+  font-weight: bold !important;
+}
+
+.customTable tbody tr:hover td.textDanger {
+  background: #343a40 !important;
+  color: #dc3545 !important;
+  font-weight: bold !important;
+}
+
+/* کلاس‌های textSuccess و textDanger */
+.textSuccess {
+  color: #28a745 !important;
+  font-weight: bold !important;
+}
+
+.textDanger {
+  color: #dc3545 !important;
+  font-weight: bold !important;
+}
+
 .pagerWrap {
   display: flex; justify-content: space-between; align-items: center; margin-top: 10px;
 }
 .pageInfo { color: #fff; }
 
+.pagerWrap {
+  display: flex; justify-content: space-between; align-items: center; margin-top: 10px;
+}
+.pageInfo { color: #fff; }
+
+/* غیرفعال کردن کلاس‌های قدیمی pagination */
 .pagination {
-  display: flex; list-style: none; padding: 0; margin: 0;
-  gap: 10px;
+  display: none !important;
 }
 .pagination li button {
-  background: var(--color-primary);
-  color: #fff;
-  padding: 6px 12px;
-  border: 1px solid var(--color-primary);
-  border-radius: 6px;
+  display: none !important;
 }
 .pagination li button[disabled] {
-  background: #fff; color: rgb(92, 92, 92);
-  border: none; cursor: not-allowed;
+  display: none !important;
+}
+
+/* کلاس‌های جدید برای pagination */
+.customPagination {
+  display: flex !important;
+  gap: 20px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 20px 0 !important;
+}
+
+.paginationBtn {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  padding: 10px 20px !important;
+  border: 1px solid var(--color-primary) !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  min-width: 80px !important;
+  text-align: center !important;
+  transition: all 0.3s ease !important;
+}
+
+.paginationBtn:hover:not(.disabled) {
+  background: #0056b3 !important;
+  border-color: #0056b3 !important;
+}
+
+.paginationBtn.disabled {
+  background: #6c757d !important;
+  color: #fff !important;
+  border-color: #6c757d !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
 }
 
 /* Desktop/Mobile visibility */

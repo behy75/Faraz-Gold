@@ -17,12 +17,12 @@ export default function UserInfo({
       : { label: "احراز نشده", klass: "text-danger" };
 
   return (
-    <div className="row g-lg-4 mt-1 mb-2">
+    <div className="row g-lg-4 mt-1 mb-0">
       {/* بخش پروفایل و وضعیت احراز */}
       <div className="col-12 col-lg-6">
         <div className="row g-lg-3 m-0">
           {/* پروفایل */}
-          <div className="col-12 col-lg-7">
+          <div className="col-12 col-lg-7 mt-0">
             <div
               className={`${styles.userProfile} d-flex justify-content-between align-items-center`}
             >
@@ -49,11 +49,11 @@ export default function UserInfo({
           </div>
 
           {/* وضعیت احراز هویت */}
-          <div className="col-12 col-lg-5">
+          <div className="col-12 col-lg-5 mt-0">
             <div
               className={`${styles.userLevel} d-flex flex-column justify-content-between`}
             >
-              <div className="d-flex justify-content-between align-items-center mb-3">
+              <div className="d-flex justify-content-between align-items-center mb-2">
                 <span className={styles.levelLabel}>سطح کابری</span>
                 <a
                   href="/dashboard/authentication/"
@@ -118,7 +118,7 @@ export default function UserInfo({
       <div className="col-12 col-lg-6">
         <div className={styles.statCard}>
           <div className="row g-3 m-0">
-            <div className="col-6">
+            <div className="col-6 mt-0">
               <div className="p-3 d-flex flex-column justify-content-between">
                 <p className={styles.statLabel}>سود و ضرر لحظه ای :</p>
                 <h5
@@ -132,7 +132,7 @@ export default function UserInfo({
               </div>
             </div>
 
-            <div className="col-6">
+            <div className="col-6 mt-0">
               <div className="p-3 d-flex flex-column justify-content-between">
                 <p className={styles.statLabel}>تعداد معاملات باز :</p>
                 <h5 className="fw-bold text-white text-center">

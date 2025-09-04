@@ -181,7 +181,7 @@ export default function UserProfilePage() {
         openTransactionsCount={userData.openTransactionsCount}
       />
 
-      <div className="row equal-height-row mt-4">
+      <div className="row equal-height-row">
         {/* موبایل: پنل اطلاعیه‌ها بالای جدول‌ها */}
         <div className="col-12 d-block d-md-none order-1 mb-3">
           <NotificationsCard

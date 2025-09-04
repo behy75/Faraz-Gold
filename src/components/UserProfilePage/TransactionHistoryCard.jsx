@@ -219,41 +219,33 @@ export default function TransactionHistoryCard({
                   صفحه {transactionsPage} از {totalTransactionsPages}
                 </span>
               </div>
-              <div>
-                <ul className="pagination">
-                  <li
-                    className={`page-item ${
-                      transactionsPage <= 1 ? "disabled" : ""
+              <div className="d-flex justify-content-center">
+                <div className={styles.customPagination}>
+                  <button
+                    className={`${styles.paginationBtn} ${
+                      transactionsPage <= 1 ? styles.disabled : ""
                     }`}
+                    onClick={() =>
+                      onTransactionsPageChange(transactionsPage - 1)
+                    }
+                    disabled={transactionsPage <= 1}
                   >
-                    <button
-                      className="page-link"
-                      onClick={() =>
-                        onTransactionsPageChange(transactionsPage - 1)
-                      }
-                      disabled={transactionsPage <= 1}
-                    >
-                      قبلی
-                    </button>
-                  </li>
-                  <li
-                    className={`page-item ${
+                    قبلی
+                  </button>
+                  <button
+                    className={`${styles.paginationBtn} ${
                       transactionsPage >= totalTransactionsPages
-                        ? "disabled"
+                        ? styles.disabled
                         : ""
                     }`}
+                    onClick={() =>
+                      onTransactionsPageChange(transactionsPage + 1)
+                    }
+                    disabled={transactionsPage >= totalTransactionsPages}
                   >
-                    <button
-                      className="page-link"
-                      onClick={() =>
-                        onTransactionsPageChange(transactionsPage + 1)
-                      }
-                      disabled={transactionsPage >= totalTransactionsPages}
-                    >
-                      بعدی
-                    </button>
-                  </li>
-                </ul>
+                    بعدی
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -314,14 +306,12 @@ export default function TransactionHistoryCard({
                 <span className={styles.pageInfo}>
                   صفحه {transactionsPage} از {totalTransactionsPages}
                 </span>
-                <ul className="pagination">
-                  <li
-                    className={`page-item ${
-                      transactionsPage <= 1 ? "disabled" : ""
-                    }`}
-                  >
+                <div className="d-flex justify-content-center">
+                  <div className={styles.customPagination}>
                     <button
-                      className="page-link"
+                      className={`${styles.paginationBtn} ${
+                        transactionsPage <= 1 ? styles.disabled : ""
+                      }`}
                       onClick={() =>
                         onTransactionsPageChange(transactionsPage - 1)
                       }
@@ -329,16 +319,12 @@ export default function TransactionHistoryCard({
                     >
                       قبلی
                     </button>
-                  </li>
-                  <li
-                    className={`page-item ${
-                      transactionsPage >= totalTransactionsPages
-                        ? "disabled"
-                        : ""
-                    }`}
-                  >
                     <button
-                      className="page-link"
+                      className={`${styles.paginationBtn} ${
+                        transactionsPage >= totalTransactionsPages
+                          ? styles.disabled
+                          : ""
+                      }`}
                       onClick={() =>
                         onTransactionsPageChange(transactionsPage + 1)
                       }
@@ -346,8 +332,8 @@ export default function TransactionHistoryCard({
                     >
                       بعدی
                     </button>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -399,34 +385,30 @@ export default function TransactionHistoryCard({
                 <span className={styles.pageInfo}>
                   صفحه {portfoliosPage} از {totalPortfoliosPages}
                 </span>
-                <ul className="pagination">
-                  <li
-                    className={`page-item ${
-                      portfoliosPage <= 1 ? "disabled" : ""
+              </div>
+              <div className="d-flex justify-content-center">
+                <div className={styles.customPagination}>
+                  <button
+                    className={`${styles.paginationBtn} ${
+                      portfoliosPage <= 1 ? styles.disabled : ""
                     }`}
+                    onClick={() => onPortfoliosPageChange(portfoliosPage - 1)}
+                    disabled={portfoliosPage <= 1}
                   >
-                    <button
-                      className="page-link"
-                      onClick={() => onPortfoliosPageChange(portfoliosPage - 1)}
-                      disabled={portfoliosPage <= 1}
-                    >
-                      قبلی
-                    </button>
-                  </li>
-                  <li
-                    className={`page-item ${
-                      portfoliosPage >= totalPortfoliosPages ? "disabled" : ""
+                    قبلی
+                  </button>
+                  <button
+                    className={`${styles.paginationBtn} ${
+                      portfoliosPage >= totalPortfoliosPages
+                        ? styles.disabled
+                        : ""
                     }`}
+                    onClick={() => onPortfoliosPageChange(portfoliosPage + 1)}
+                    disabled={portfoliosPage >= totalPortfoliosPages}
                   >
-                    <button
-                      className="page-link"
-                      onClick={() => onPortfoliosPageChange(portfoliosPage + 1)}
-                      disabled={portfoliosPage >= totalPortfoliosPages}
-                    >
-                      بعدی
-                    </button>
-                  </li>
-                </ul>
+                    بعدی
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -470,34 +452,30 @@ export default function TransactionHistoryCard({
                 <span className={styles.pageInfo}>
                   صفحه {portfoliosPage} از {totalPortfoliosPages}
                 </span>
-                <ul className="pagination">
-                  <li
-                    className={`page-item ${
-                      portfoliosPage <= 1 ? "disabled" : ""
+              </div>
+              <div className="d-flex justify-content-center">
+                <div className={styles.customPagination}>
+                  <button
+                    className={`${styles.paginationBtn} ${
+                      portfoliosPage <= 1 ? styles.disabled : ""
                     }`}
+                    onClick={() => onPortfoliosPageChange(portfoliosPage - 1)}
+                    disabled={portfoliosPage <= 1}
                   >
-                    <button
-                      className="page-link"
-                      onClick={() => onPortfoliosPageChange(portfoliosPage - 1)}
-                      disabled={portfoliosPage <= 1}
-                    >
-                      قبلی
-                    </button>
-                  </li>
-                  <li
-                    className={`page-item ${
-                      portfoliosPage >= totalPortfoliosPages ? "disabled" : ""
+                    قبلی
+                  </button>
+                  <button
+                    className={`${styles.paginationBtn} ${
+                      portfoliosPage >= totalPortfoliosPages
+                        ? styles.disabled
+                        : ""
                     }`}
+                    onClick={() => onPortfoliosPageChange(portfoliosPage + 1)}
+                    disabled={portfoliosPage >= totalPortfoliosPages}
                   >
-                    <button
-                      className="page-link"
-                      onClick={() => onPortfoliosPageChange(portfoliosPage + 1)}
-                      disabled={portfoliosPage >= totalPortfoliosPages}
-                    >
-                      بعدی
-                    </button>
-                  </li>
-                </ul>
+                    بعدی
+                  </button>
+                </div>
               </div>
             </div>
           </div>
