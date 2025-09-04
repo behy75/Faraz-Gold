@@ -49,7 +49,7 @@ export default function UserInfo({
           </div>
 
           {/* وضعیت احراز هویت */}
-          <div className="col-12 col-lg-5 mt-0">
+          <div className="col-12 col-lg-5 mt-lg-0 mt-3">
             <div
               className={`${styles.userLevel} d-flex flex-column justify-content-between`}
             >
@@ -118,7 +118,7 @@ export default function UserInfo({
       <div className="col-12 col-lg-6">
         <div className={styles.statCard}>
           <div className="row g-3 m-0">
-            <div className="col-6 mt-0">
+            <div className="col-6 mt-lg-0 mt-3">
               <div className="p-3 d-flex flex-column justify-content-between">
                 <p className={styles.statLabel}>سود و ضرر لحظه ای :</p>
                 <h5
@@ -132,7 +132,7 @@ export default function UserInfo({
               </div>
             </div>
 
-            <div className="col-6 mt-0">
+            <div className="col-6 mt-lg-0 mt-3">
               <div className="p-3 d-flex flex-column justify-content-between">
                 <p className={styles.statLabel}>تعداد معاملات باز :</p>
                 <h5 className="fw-bold text-white text-center">

@@ -21,7 +21,7 @@
 .cardBody {
   padding: 0;
   background: var(--notif-card-bg);
-  max-height: 300px;
+  max-height: 250px;
   overflow-y: auto;
 }
 
