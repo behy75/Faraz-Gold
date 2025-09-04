@@ -1,0 +1,185 @@
+/* src/components/UserProfilePage/NotificationsCard.module.css */
+
+.notificationsCard {
+  background: var(--notif-card-bg);
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader {
+  background-color: var(--notif-header-bg) !important;
+  color: var(--notif-header-fg) !important;
+  border-bottom: none;
+  padding: 12px 20px;
+  font-weight: 600;
+}
+
+.cardBody {
+  padding: 0;
+  background: var(--notif-card-bg);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notificationsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.notificationItem {
+  padding: 15px 20px;
+  /* Removed border-bottom from li elements */
+}
+
+.notificationHeader {
+  margin-bottom: 8px;
+}
+
+.notificationTitle {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.notificationDate {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.notificationContent {
+  color: var(--color-text);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.notificationDivider {
+  margin: 10px 0 0 0;
+  border-color: var(--notif-divider);
+  opacity: 0.5;
+}
+
+.cardFooter {
+  background: var(--notif-card-bg);
+  border-top: 1px solid var(--notif-divider);
+  margin: 12px 20px;
+}
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #f5f5f5;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.pagination .page-item {
+  margin: 0;
+  flex: 1;
+}
+
+.pagination .page-item:first-child .page-link {
+  border-radius: 5px 0 0 5px;
+  border-right: 1px solid #ddd;
+}
+
+.pagination .page-item:last-child .page-link {
+  border-radius: 0 5px 5px 0;
+  border-left: 1px solid #784ed1;
+}
+
+.page-link {
+  background-color: #f5f5f5 !important;
+  color: #333 !important;
+  padding: 8px 16px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  transition: 0.3s ease !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+/* Next button styling */
+.pagination .page-item:last-child .page-link {
+  background-color: #784ed1 !important;
+  color: white !important;
+}
+
+.page-link:hover {
+  background-color: #e8e8e8 !important;
+  color: #333 !important;
+  text-decoration: none !important;
+}
+
+.pagination .page-item:last-child .page-link:hover {
+  background-color: #6c63ff !important;
+  color: white !important;
+}
+
+.page-link:disabled,
+.page-item.disabled .page-link {
+  background-color: #f5f5f5 !important;
+  color: #999 !important;
+  cursor: not-allowed !important;
+}
+
+.page-link:disabled:hover,
+.page-item.disabled .page-link:hover {
+  background-color: #f5f5f5 !important;
+  color: #999 !important;
+  text-decoration: none !important;
+}
+
+/* Scrollbar styling */
+.cardBody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cardBody::-webkit-scrollbar-track {
+  background: var(--surface-card-bg);
+}
+
+.cardBody::-webkit-scrollbar-thumb {
+  background: var(--notif-divider);
+  border-radius: 3px;
+}
+
+.cardBody::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cardHeader {
+    padding: 10px 15px;
+  }
+  
+  .notificationItem {
+    padding: 12px 15px;
+  }
+  
+  .cardFooter {
+    margin: 10px 15px;
+  }
+  
+  .page-link {
+    padding: 6px 0px !important;
+    font-size: 12px !important;
+  }
+}

@@ -1,0 +1,83 @@
+/* src/components/UserProfilePage/UserInfo.module.css */
+.userProfile {
+  background: var(--card-bg);
+  color: var(--color-text);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.userImg i { 
+  font-size: 50px; 
+  color: #A3A5A8; 
+}
+
+.infoRow { 
+  font-size: 13px; 
+}
+
+.userLevel { 
+  color: var(--color-text); 
+}
+
+.levelLabel { 
+  line-height: 1.25rem; 
+  font-size: .9375rem; 
+  color: #a3a5a8; 
+}
+
+.levelLink { 
+  font-size: .75rem; 
+  line-height: 1.5rem; 
+  color: var(--color-primary); 
+  text-decoration: none; 
+}
+
+.levelLink:hover { 
+  text-decoration: underline; 
+}
+
+.levelContainer {
+  background: var(--card-bg);
+  border-radius: 21px;
+  padding: 7px 13px 6px 9px;
+}
+
+.levelTicks { 
+  margin-right: 48px; 
+  gap: 10px; 
+}
+
+.levelSelector {
+  width: 20px; 
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.levelSelector.active { 
+  border-color: var(--success); 
+  background-color: var(--success); 
+}
+
+.center { 
+  width: 10px; 
+  height: 10px; 
+  background: #fff; 
+  border-radius: 50%; 
+}
+
+.statCard {
+  background: var(--card-bg);
+  border: none;
+  color: #a3a5a8;
+  border-radius: 8px;
+}
+
+.statLabel {
+  color: #a3a5a8;
+  text-align: center;
+  margin-bottom: 8px;
+}

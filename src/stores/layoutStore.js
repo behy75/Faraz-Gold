@@ -5,12 +5,12 @@ export const useLayoutStore = create((set, get) => ({
   boot: null,
   loading: false,
   error: null,
-  loadBoot: async (opts={}) => {
+  loadBoot: async (opts = {}) => {
     try {
       set({ loading: true, error: null });
-      const data = await fetchLayoutBoot(opts);
-      set({ boot: data, loading: false });
-      return data;
+      // const data = await fetchLayoutBoot(opts);
+      set({ boot: {}, loading: false });
+      return {};
     } catch (e) {
       set({ error: e.message || "خطا در دریافت اطلاعات", loading: false });
       throw e;

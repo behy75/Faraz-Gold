@@ -11,23 +11,23 @@ export default defineConfig(({ mode }) => {
       port: 5173,
       strictPort: true,
       host: "localhost",
-      proxy: {
-        "/room": {
-          target: "http://localhost:8000",
-          changeOrigin: true,
-          secure: false,
-        },
-        "/dashboard": {
-          target: "http://localhost:8000",
-          changeOrigin: true,
-          secure: false,
-        },
-        "/static": {
-          target: "http://localhost:8000",
-          changeOrigin: true,
-          secure: false,
-        },
-      },
+      // proxy: {
+      //   "/room": {
+      //     target: "http://localhost:8000",
+      //     changeOrigin: true,
+      //     secure: false,
+      //   },
+      //   "/dashboard": {
+      //     target: "http://localhost:8000",
+      //     changeOrigin: true,
+      //     secure: false,
+      //   },
+      //   "/static": {
+      //     target: "http://localhost:8000",
+      //     changeOrigin: true,
+      //     secure: false,
+      //   },
+      // },
     },
     build: {
       outDir: "dist",

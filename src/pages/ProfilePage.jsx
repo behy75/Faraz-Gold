@@ -1,10 +1,10 @@
 // src/pages/ProfilePage.jsx
-import React from 'react'
-import UserHeader from '../components/profile/UserHeader'
-import HistoryTabs from '../components/profile/HistoryTabs'
-import NotificationsPanel from '../components/profile/NotificationsPanel'
-import PortfolioChart from '../components/profile/PortfolioChart'
-import { useProfilePage } from '../hooks/useProfilePage'
+import React from "react";
+import UserHeader from "../components/profile/UserHeader";
+import HistoryTabs from "../components/profile/HistoryTabs";
+import NotificationsPanel from "../components/profile/NotificationsPanel";
+import PortfolioChart from "../components/profile/PortfolioChart";
+import { useProfilePage } from "../hooks/useProfilePage";
 
 export default function ProfilePage() {
   const {
@@ -24,15 +24,19 @@ export default function ProfilePage() {
     gotoTransactionsPage,
     gotoPortfoliosPage,
     gotoNotificationsPage,
-    notificationsCount
-  } = useProfilePage()
+    notificationsCount,
+  } = useProfilePage();
 
-  if (loading) {
-    return <div className="container py-4">در حال بارگذاری…</div>
-  }
+  // if (loading) {
+  //   return <div className="container py-4">در حال بارگذاری…</div>
+  // }
 
   if (error) {
-    return <div className="container py-4 text-danger">خطا در دریافت داده‌ها: {error}</div>
+    return (
+      <div className="container py-4 text-danger">
+        خطا در دریافت داده‌ها: {error}
+      </div>
+    );
   }
 
   return (
@@ -85,5 +89,5 @@ export default function ProfilePage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

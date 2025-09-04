@@ -1,0 +1,27 @@
+/* src/components/UserProfilePage/ProfitLossChart.module.css */
+
+.chartContainer {
+  background-color: rgb(20, 21, 26);
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+  min-height: 400px;
+}
+
+.chartWrapper {
+  position: relative;
+  height: 350px;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chartContainer {
+    padding: 15px;
+    min-height: 300px;
+  }
+  
+  .chartWrapper {
+    height: 250px;
+  }
+}

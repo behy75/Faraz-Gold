@@ -1,19 +1,14 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
-import DashboardLayout from './components/layouts/DashboardLayout'
+import { Routes, Route, Navigate } from "react-router-dom";
+import DashboardLayout from "./components/layouts/DashboardLayout";
 import ProfilePage from "./pages/ProfilePage";
+import UserProfilePage from "./pages/UserProfilePage";
 
-// می‌تونی صفحات دیگر را هم بعداً اضافه کنی
 export default function App() {
   return (
     <DashboardLayout>
       <Routes>
-        <Route
-          path="/profile"
-          element={
-              <ProfilePage />
-          }
-        />
+        <Route path="/profile" element={<UserProfilePage />} />
       </Routes>
     </DashboardLayout>
-  )
+  );
 }
