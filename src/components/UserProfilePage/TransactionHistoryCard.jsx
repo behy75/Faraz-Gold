@@ -261,8 +261,8 @@ export default function TransactionHistoryCard({
                       <span
                         className={
                           transaction.type === "خرید"
-                            ? "text-success"
-                            : "text-danger"
+                            ? styles.textSuccess
+                            : styles.textDanger
                         }
                         style={{ fontWeight: "normal" }}
                       >
@@ -270,17 +270,26 @@ export default function TransactionHistoryCard({
                       </span>{" "}
                       - {transaction.unit} واحد
                     </h5>
-                    <div className="card-text">
+                    <div className={styles.cardText}>
                       <span>مبلغ ورودی:</span>
                       <span>{transaction.inputAmount}</span>
                     </div>
-                    <div className="card-text">
+                    <div className={styles.cardText}>
                       <span>مبلغ خروجی:</span>
                       <span>{transaction.outputAmount}</span>
                     </div>
-                    <div className="card-text">
+                    <div className={styles.cardText}>
                       <span>سود/ضرر:</span>
-                      <span style={getProfitLossStyle(transaction.profitLoss)}>
+                      <span
+                        style={{
+                          color: transaction.profitLoss.startsWith("-")
+                            ? "#dc3545"
+                            : transaction.profitLoss.startsWith("+")
+                            ? "#28a745"
+                            : "#ffffff",
+                          fontWeight: "bold",
+                        }}
+                      >
                         <span className="fw-bold">
                           {formatProfitLoss(transaction.profitLoss).number}
                         </span>
@@ -291,11 +300,11 @@ export default function TransactionHistoryCard({
                         )}
                       </span>
                     </div>
-                    <div className="card-text">
+                    <div className={styles.cardText}>
                       <span>زمان باز شدن:</span>
                       <span>{transaction.openTime}</span>
                     </div>
-                    <div className="card-text">
+                    <div className={styles.cardText}>
                       <span>زمان بسته شدن:</span>
                       <span>{transaction.closeTime}</span>
                     </div>
@@ -420,17 +429,26 @@ export default function TransactionHistoryCard({
                     <h5 className="card-title">
                       <span className="text-white">{portfolio.type}</span>
                     </h5>
-                    <div className="card-text">
+                    <div className={styles.cardText}>
                       <span>مبلغ ورودی:</span>
                       <span>{portfolio.inputAmount}</span>
                     </div>
-                    <div className="card-text">
+                    <div className={styles.cardText}>
                       <span>مبلغ خروجی:</span>
                       <span>{portfolio.outputAmount}</span>
                     </div>
-                    <div className="card-text">
+                    <div className={styles.cardText}>
                       <span>سود/ضرر:</span>
-                      <span style={getProfitLossStyle(portfolio.profitLoss)}>
+                      <span
+                        style={{
+                          color: portfolio.profitLoss.startsWith("-")
+                            ? "#dc3545"
+                            : portfolio.profitLoss.startsWith("+")
+                            ? "#28a745"
+                            : "#ffffff",
+                          fontWeight: "bold",
+                        }}
+                      >
                         <span className="fw-bold">
                           {formatProfitLoss(portfolio.profitLoss).number}
                         </span>
@@ -441,7 +459,7 @@ export default function TransactionHistoryCard({
                         )}
                       </span>
                     </div>
-                    <div className="card-text">
+                    <div className={styles.cardText}>
                       <span>وضعیت:</span>
                       <span>{portfolio.status}</span>
                     </div>

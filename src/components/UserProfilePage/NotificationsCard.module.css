@@ -21,19 +21,18 @@
 .cardBody {
   padding: 0;
   background: var(--notif-card-bg);
-  max-height: 250px;
+  max-height: 300px;
   overflow-y: auto;
 }
 
 .notificationsList {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding-top: 15px;
 }
 
 .notificationItem {
   padding: 15px 20px;
-  /* Removed border-bottom from li elements */
 }
 
 .notificationHeader {

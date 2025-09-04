@@ -125,7 +125,7 @@
 
 /* Desktop Table Styling */
 .desktopTable {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .desktopTable .table {
@@ -140,10 +140,10 @@
 }
 
 .desktopTable .table thead th {
-  background-color: #2a2d35;
-  color: #c0c2c5;
+  background-color: transparent !important;
+  color: transparent !important;
   text-align: center;
-  border: 1px solid #343a40;
+  border: 1px solid transparent !important;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -174,6 +174,7 @@
   background-color: #1e2026 !important; /* ردیف‌های زوج شامل هدر (0) */
   color: #c0c2c5 !important;
   font-weight: normal !important;
+  opacity: 0.1 !important;
 }
 
 .desktopTable .table tbody tr:last-child td {
@@ -186,6 +187,7 @@
 
 .desktopTable .table tbody tr:nth-child(even) {
   background-color: #1e2026 !important; /* ردیف‌های زوج شامل هدر (0) */
+  opacity: 0.1 !important;
 }
 
 .desktopTable .table tbody tr:hover {
@@ -282,14 +284,125 @@
 }
 
 .mobileCard .card-title {
-  color: var(--color-text);
+  color: #ffffff;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
+/* Mobile Cards Text Override */
+.cardText {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  margin-bottom: 8px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.cardText span {
+  color: #ffffff !important;
+  font-weight: normal !important;
+}
+
+.cardText span:first-child {
+  color: #ffffff !important;
+  font-weight: normal !important;
+}
+
+.cardText span:last-child {
+  color: #ffffff !important;
+  font-weight: normal !important;
+}
+
+/* Specific override for profit/loss values */
+.cardText span:last-child .textSuccess {
+  color: #28a745 !important;
+}
+
+.cardText span:last-child .textDanger {
+  color: #dc3545 !important;
+}
+
+/* Force override for mobile card profit/loss values */
+.cardText .textSuccess {
+  color: #28a745 !important;
+}
+
+.cardText .textDanger {
+  color: #dc3545 !important;
+}
+
+/* Mobile card title text colors */
+.mobileCard .card-title .textSuccess {
+  color: #28a745 !important;
+}
+
+.mobileCard .card-title .textDanger {
+  color: #dc3545 !important;
+}
+
+/* Override for mobile card title */
+.mobileCard .card-title {
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin-bottom: 15px !important;
+}
+
+/* Override for success/danger colors in mobile cards */
+.mobileCard .textSuccess {
+  color: #28a745 !important;
+}
+
+.mobileCard .textDanger {
+  color: #dc3545 !important;
+}
+
+/* Additional override for cardText success/danger */
+.mobileCard .cardText .textSuccess {
+  color: #28a745 !important;
+}
+
+.mobileCard .cardText .textDanger {
+  color: #dc3545 !important;
+}
+
+/* Ultimate override for profit/loss numbers */
+.mobileCard .cardText span:last-child .textSuccess,
+.mobileCard .cardText .textSuccess {
+  color: #28a745 !important;
+  font-weight: bold !important;
+}
+
+.mobileCard .cardText span:last-child .textDanger,
+.mobileCard .cardText .textDanger {
+  color: #dc3545 !important;
+  font-weight: bold !important;
+}
+
+/* کلاس cardText برای کارت‌های موبایل */
+.cardText {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  margin-bottom: 8px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.cardText span:first-child {
+  color: #ffffff !important;
+  font-weight: normal !important;
+}
+
+.cardText span:last-child {
+  color: #ffffff !important;
+  font-weight: normal !important;
+}
+
 .mobileCard .card-text {
-  color: #a3a5a8;
+  color: #ffffff;
   font-size: 14px;
   margin-bottom: 8px;
   display: flex;
@@ -298,7 +411,7 @@
 }
 
 .mobileCard .card-text span:first-child {
-  color: #a3a5a8 !important;
+  color: #ffffff !important;
   font-weight: normal;
 }
 
@@ -472,13 +585,13 @@
   }
   
   .paginationSection {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column-reverse;
     align-items: center;
   }
   
   .pageInfo {
-    text-align: center;
+    text-align: start;
+    width: 100%;
     order: 1;
   }
   
@@ -491,5 +604,9 @@
   .pagination .page-link {
     padding: 6px 12px !important;
     font-size: 12px !important;
+  }
+  
+  .customPagination {
+    margin: 10px 0 !important;
   }
 }
