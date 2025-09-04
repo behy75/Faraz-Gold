@@ -14,32 +14,32 @@ export default function UserProfilePage() {
 
   // Mock data - in real app this would come from API or props
   const userData = {
-    username: "09186393984",
-    balance: 1500000,
+    username: "09030523154",
+    balance: 15000000,
     verificationStatus: "verified",
     totalProfitLoss: 0,
-    openTransactionsCount: 5,
+    openTransactionsCount: 0,
   };
 
   // Mock notifications data
   const notificationsData = [
     {
       id: 1,
-      title: "۵۴",
-      content: "۵۴۵",
-      date: "۱۴۰۴/۰۶/۰۱",
+      title: "شیفت شب",
+      content: "اطلاعیه مربوط به شیفت شب و تغییرات ساعات کاری",
+      date: "۱۴۰۴/۰۲/۱۲",
     },
     {
       id: 2,
-      title: "۴",
-      content: "۴",
-      date: "۱۴۰۴/۰۶/۰۱",
+      title: "بازگشایی",
+      content: "اطلاعیه بازگشایی سیستم و شروع فعالیت‌های جدید",
+      date: "۱۴۰۴/۰۲/۱۲",
     },
     {
       id: 3,
-      title: "۵",
-      content: "۶",
-      date: "۱۴۰۴/۰۶/۰۱",
+      title: "به‌روزرسانی سیستم",
+      content: "به‌روزرسانی سیستم و اضافه شدن قابلیت‌های جدید",
+      date: "۱۴۰۴/۰۲/۱۱",
     },
   ];
 
@@ -51,7 +51,7 @@ export default function UserProfilePage() {
       inputAmount: "۲۸,۴۰۲",
       type: "خرید",
       outputAmount: "۲۸,۳۹۴",
-      profitLoss: "۰ تومان",
+      profitLoss: "-۱۸۴,۰۰۰ تومان",
       openTime: "۰۳:۳۳ ۱۴۰۴/۰۶/۱۳",
       closeTime: "۰۳:۳۴ ۱۴۰۴/۰۶/۱۳",
     },

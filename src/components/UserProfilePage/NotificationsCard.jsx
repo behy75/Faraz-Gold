@@ -11,21 +11,21 @@ export default function NotificationsCard({
   const defaultNotifications = [
     {
       id: 1,
-      title: "۵۴",
-      content: "۵۴۵",
-      date: "۱۴۰۴/۰۶/۰۱",
+      title: "شیفت شب",
+      content: "اطلاعیه مربوط به شیفت شب و تغییرات ساعات کاری",
+      date: "۱۴۰۴/۰۲/۱۲",
     },
     {
       id: 2,
-      title: "۴",
-      content: "۴",
-      date: "۱۴۰۴/۰۶/۰۱",
+      title: "بازگشایی",
+      content: "اطلاعیه بازگشایی سیستم و شروع فعالیت‌های جدید",
+      date: "۱۴۰۴/۰۲/۱۲",
     },
     {
       id: 3,
-      title: "۵",
-      content: "۶",
-      date: "۱۴۰۴/۰۶/۰۱",
+      title: "به‌روزرسانی سیستم",
+      content: "به‌روزرسانی سیستم و اضافه شدن قابلیت‌های جدید",
+      date: "۱۴۰۴/۰۲/۱۱",
     },
   ];
 
@@ -67,30 +67,41 @@ export default function NotificationsCard({
       </div>
 
       {/* دکمه‌های پیمایش */}
-      <div className={`${styles.cardFooter} card-footer`}>
-        <div className={styles.paginationContainer}>
+      <div className={`${styles.cardFooter} card-footer notification-footer`}>
+        <div className={`${styles.paginationContainer} pagination-container`}>
           <ul className="pagination">
             <li className={`page-item ${currentPage <= 1 ? "disabled" : ""}`}>
-              <button
+              <a
                 className="page-link"
-                onClick={() => onPageChange(currentPage - 1)}
-                disabled={currentPage <= 1}
+                href="#"
+                tabIndex="-1"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (currentPage > 1) {
+                    onPageChange(currentPage - 1);
+                  }
+                }}
               >
                 قبلی
-              </button>
+              </a>
             </li>
             <li
               className={`page-item ${
                 currentPage >= totalPages ? "disabled" : ""
               }`}
             >
-              <button
+              <a
                 className="page-link"
-                onClick={() => onPageChange(currentPage + 1)}
-                disabled={currentPage >= totalPages}
+                href={`?notifications_page=${currentPage + 1}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (currentPage < totalPages) {
+                    onPageChange(currentPage + 1);
+                  }
+                }}
               >
                 بعدی
-              </button>
+              </a>
             </li>
           </ul>
         </div>

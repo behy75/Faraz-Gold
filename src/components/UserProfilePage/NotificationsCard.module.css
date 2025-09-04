@@ -11,10 +11,11 @@
 
 .cardHeader {
   background-color: var(--notif-header-bg) !important;
-  color: var(--notif-header-fg) !important;
+  color: #ffffff !important;
   border-bottom: none;
   padding: 12px 20px;
   font-weight: 600;
+  font-size: 16px;
 }
 
 .cardBody {
@@ -41,19 +42,21 @@
 
 .notificationTitle {
   font-weight: 600;
-  color: var(--color-text);
+  color: #ffffff;
   font-size: 14px;
 }
 
 .notificationDate {
-  color: var(--color-muted);
+  color: #a3a5a8;
   font-size: 12px;
+  font-weight: 400;
 }
 
 .notificationContent {
-  color: var(--color-text);
+  color: #a3a5a8;
   font-size: 13px;
   line-height: 1.4;
+  font-weight: 400;
 }
 
 .notificationDivider {
@@ -63,15 +66,27 @@
 }
 
 .cardFooter {
-  background: var(--notif-card-bg);
-  border-top: 1px solid var(--notif-divider);
-  margin: 12px 20px;
+  --bs-card-cap-padding-y: 0.5rem;
+  --bs-card-cap-padding-x: 1rem;
+  --bs-card-border-width: 1px;
+  --bs-card-border-color: rgba(0, 0, 0, 0.175);
+  --bs-card-border-radius: 0.375rem;
+  --bs-body-color-rgb: 33, 37, 41;
+  --bs-body-bg: #fff;
+
+  font-family: "IranSans", sans-serif;
+  word-wrap: break-word;
+  box-sizing: border-box;
+
+  padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+  background-color: rgba(var(--bs-body-color-rgb), 0.03);
+  border-top: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  border-radius: 0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
 }
 
 .paginationContainer {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
 }
 
 .pagination {
@@ -79,9 +94,10 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  background: #f5f5f5;
-  border-radius: 5px;
+  background: transparent;
+  border-radius: 8px;
   overflow: hidden;
+  border: 1px solid #e0e0e0;
 }
 
 .pagination .page-item {
@@ -90,59 +106,62 @@
 }
 
 .pagination .page-item:first-child .page-link {
-  border-radius: 5px 0 0 5px;
-  border-right: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  border-right: 1px solid #e0e0e0;
 }
 
 .pagination .page-item:last-child .page-link {
-  border-radius: 0 5px 5px 0;
-  border-left: 1px solid #784ed1;
+  border-radius: 0 8px 8px 0;
+  border-left: none;
 }
 
 .page-link {
-  background-color: #f5f5f5 !important;
-  color: #333 !important;
-  padding: 8px 16px !important;
+  font-family: "IranSans", sans-serif;
+  font-size: 0.9rem;
+  color: #0d6efd;
+  background-color: #f8f9fa !important;
+  padding: 10px 20px !important;
   border: none !important;
   border-radius: 0 !important;
   text-decoration: none !important;
   margin: 0 !important;
   transition: 0.3s ease !important;
-  font-size: 13px !important;
+  font-weight: 500 !important;
   cursor: pointer !important;
   display: block !important;
   width: 100% !important;
   text-align: center !important;
 }
 
-/* Next button styling */
+/* Active/Next button styling */
 .pagination .page-item:last-child .page-link {
-  background-color: #784ed1 !important;
-  color: white !important;
+  background-color: #ffffff !important;
+  color: #0d6efd !important;
 }
 
 .page-link:hover {
-  background-color: #e8e8e8 !important;
-  color: #333 !important;
+  background-color: #e9ecef !important;
+  color: #495057 !important;
   text-decoration: none !important;
 }
 
 .pagination .page-item:last-child .page-link:hover {
-  background-color: #6c63ff !important;
-  color: white !important;
+  background-color: #f8f9fa !important;
+  color: #0d6efd !important;
 }
 
 .page-link:disabled,
 .page-item.disabled .page-link {
-  background-color: #f5f5f5 !important;
-  color: #999 !important;
-  cursor: not-allowed !important;
+  color: #6c757d;
+  pointer-events: none;
+  cursor: default;
+  background-color: #f8f9fa !important;
 }
 
 .page-link:disabled:hover,
 .page-item.disabled .page-link:hover {
-  background-color: #f5f5f5 !important;
-  color: #999 !important;
+  background-color: #f8f9fa !important;
+  color: #6c757d !important;
   text-decoration: none !important;
 }
 
@@ -183,3 +202,4 @@
     font-size: 12px !important;
   }
 }
+

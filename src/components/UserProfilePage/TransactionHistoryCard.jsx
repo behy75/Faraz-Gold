@@ -127,6 +127,8 @@ export default function TransactionHistoryCard({
                 <span className={styles.pageInfo}>
                   صفحه {transactionsPage} از {totalTransactionsPages}
                 </span>
+              </div>
+              <div>
                 <ul className="pagination">
                   <li
                     className={`page-item ${
