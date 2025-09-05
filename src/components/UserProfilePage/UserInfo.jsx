@@ -135,7 +135,7 @@ export default function UserInfo({
             <div className="col-6 mt-lg-0 mt-3">
               <div className="p-3 d-flex flex-column justify-content-between">
                 <p className={styles.statLabel}>تعداد معاملات باز :</p>
-                <h5 className="fw-bold text-white text-center">
+                <h5 className="text-white text-center">
                   {formatNumberFa(openTransactionsCount)}
                 </h5>
               </div>
